@@ -1,13 +1,14 @@
 // src/components/Showcase.jsx
 import React from "react";
 // 确保你有这张图片或替换成你的图片
-import projectThumbnail from "../assets/project-thumbnail.png";
+import projectThumbnail from "../assets/place-holder.svg";
+import cicadaEnglishThumbnail from "../assets/cicada-english.png";
 
 const projects = [
   {
     title: "知了英语",
     description: "AI驱动的英语学习平台",
-    imageUrl: projectThumbnail,
+    imageUrl: cicadaEnglishThumbnail,
     demoUrl: "https://cicada-english.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
   },
@@ -28,35 +29,40 @@ const projects = [
 ];
 
 const ProjectCard = ({ title, description, imageUrl, demoUrl, githubUrl }) => (
-  <div className="group rounded-lg overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1">
+  <a
+    href={demoUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block group rounded-xl overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+  >
     <img
       src={imageUrl}
       alt={title}
-      className="w-full h-60 object-cover transition-transform duration-200 group-hover:scale-105"
+      className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105"
     />
     <div className="p-6">
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-primary/70 mb-4">{description}</p>
-      <div className="flex space-x-4">
+      <h3 className="text-xl font-bold mb-3">{title}</h3>
+      <p className="text-primary/70 mb-5">{description}</p>
+      <div className="flex space-x-3">
         <a
           href={demoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-accent font-semibold hover:underline"
+          className="px-4 py-2 bg-cyan-500 text-white font-semibold rounded-lg shadow hover:bg-accent/90 transition-transform transform hover:-translate-y-0.5"
         >
-          访问 Demo
+          Demo
         </a>
         <a
           href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary/60 font-semibold hover:underline"
+          className="px-4 py-2 bg-primary/10 text-primary font-semibold rounded-lg shadow hover:bg-primary/20 transition-transform transform hover:-translate-y-0.5"
         >
           GitHub
         </a>
       </div>
     </div>
-  </div>
+  </a>
 );
 
 const Showcase = () => {

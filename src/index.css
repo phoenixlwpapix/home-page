@@ -1,0 +1,13 @@
+@import "tailwindcss";
+/* src/index.css */
+
+@layer base {
+  html {
+    /* 开启平滑滚动 */
+    scroll-behavior: smooth;
+  }
+  body {
+    /* 应用基础背景和字体颜色 */
+    @apply bg-gray-100 text-gray-900 font-sans;
+  }
+}

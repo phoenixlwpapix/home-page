@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import React, { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
-import { useTheme } from "../contexts/ThemeContext.jsx";
+import { useTheme } from "../hooks/useTheme";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,14 +19,14 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-sm border-b border-gray-200/20 dark:border-gray-700/50"
+          ? "bg-secondary/80 dark:bg-secondary/80 backdrop-blur-sm shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a
           href="#home"
-          className="flex items-center space-x-2 text-xl font-bold tracking-wider text-gray-900 dark:text-gray-100"
+          className="flex items-center space-x-2 text-xl font-bold tracking-wider text-primary dark:text-primary"
         >
           {/* SVG Logo from public folder */}
           <img src="/favicon.svg" alt="Studio YYH Logo" className="w-6 h-6" />
@@ -36,13 +36,13 @@ const Header = () => {
           <nav className="space-x-8">
             <a
               href="#about"
-              className="text-base text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 hover-underline"
+              className="text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
             >
               About
             </a>
             <a
               href="#works"
-              className="text-base text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 hover-underline"
+              className="text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
             >
               Works
             </a>
@@ -55,7 +55,7 @@ const Header = () => {
               style={{
                 background: isDark
                   ? "linear-gradient(to right, rgb(71, 85, 105), rgb(15, 23, 42))"
-                  : "linear-gradient(to right, rgb(251, 191, 36), rgb(251, 146, 60))",
+                  : "linear-gradient(to right, oklch(0.82 0.09 235), #33A9D8)",
               }}
               aria-label={
                 isDark ? "Switch to light mode" : "Switch to dark mode"

@@ -11,17 +11,16 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: "#0a0a0a",
-          dark: "#f5f5f5",
-        },
-        secondary: {
-          DEFAULT: "#f5f5f5",
-          dark: "#1a1a1a",
-        },
-        accent: {
-          DEFAULT: "#0070f3",
-          dark: "#3b82f6",
-        },
+        DEFAULT: "#0a0a0a",   // 主文本/深色背景
+        foreground: "#f5f5f5" // 浅色前景
+      },
+      secondary: {
+        DEFAULT: "#e5f6fb",   // 浅蓝灰（比 accent 浅很多，用作背景衬色）
+        foreground: "#0a0a0a" // 深色文字
+      },
+      accent: {
+        DEFAULT: "#33A9D8",   // 品牌蓝
+        foreground: "#ffffff" // 白字
       },
       keyframes: {
         "fade-in-up": {

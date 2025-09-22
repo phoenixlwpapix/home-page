@@ -3,15 +3,25 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
       colors: {
-        primary: "#0a0a0a",
-        secondary: "#f5f5f5",
-        accent: "#0070f3",
+        primary: {
+          DEFAULT: "#0a0a0a",
+          dark: "#f5f5f5",
+        },
+        secondary: {
+          DEFAULT: "#f5f5f5",
+          dark: "#1a1a1a",
+        },
+        accent: {
+          DEFAULT: "#0070f3",
+          dark: "#3b82f6",
+        },
       },
       keyframes: {
         "fade-in-up": {

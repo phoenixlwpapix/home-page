@@ -15,14 +15,14 @@ const projects = [
     description: "一个烘焙爱好者的个人主页。",
     imageUrl: "https://placehold.co/600x400/ffc0cb/FFFFFF?text=Chez%20Liliane",
     demoUrl: "https://bakery.studioyyh.tech/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/phoenixlwpapix/phoenixlwpapix.github.io",
   },
   {
     title: "Math Toolkit",
     description: "帮你更好理解数学、物理、化学知识。",
     imageUrl: "https://placehold.co/600x400/71A9F7/FFFFFF?text=Math%20Toolkit",
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://math-toolkit.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/math-toolkit",
   },
   {
     title: "Coming Soon...",

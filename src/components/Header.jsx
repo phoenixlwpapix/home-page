@@ -1,9 +1,9 @@
 // src/components/Header.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
 
-const Header = () => {
+const Header = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { isDark, toggleTheme, mounted } = useTheme();
 
@@ -14,6 +14,23 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Style constants for better readability
+  const buttonBackground = isDark
+    ? "linear-gradient(to right, rgb(71, 85, 105), rgb(15, 23, 42))"
+    : "linear-gradient(to right, oklch(0.82 0.09 235), #33A9D8)";
+
+  const sliderClass = `relative w-6 h-6 bg-white rounded-full shadow-md transform transition-all duration-300 ease-out flex items-center justify-center ${
+    isDark ? "translate-x-6" : "translate-x-1"
+  }`;
+
+  const sunClass = `w-4 h-4 text-amber-500 absolute transition-all duration-300 ease-out ${
+    isDark ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"
+  }`;
+
+  const moonClass = `w-4 h-4 text-slate-700 absolute transition-all duration-300 ease-out ${
+    isDark ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"
+  }`;
 
   return (
     <header
@@ -51,35 +68,15 @@ const Header = () => {
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="relative w-14 h-8 rounded-full transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r shadow-lg transform hover:scale-105 ml-4"
-              style={{
-                background: isDark
-                  ? "linear-gradient(to right, rgb(71, 85, 105), rgb(15, 23, 42))"
-                  : "linear-gradient(to right, oklch(0.82 0.09 235), #33A9D8)",
-              }}
+              className="relative w-14 h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r shadow-lg transform hover:scale-105 ml-4"
+              style={{ background: buttonBackground }}
               aria-label={
                 isDark ? "Switch to light mode" : "Switch to dark mode"
               }
             >
-              <div
-                className={`relative w-6 h-6 bg-white rounded-full shadow-md transform transition-all duration-300 ease-in-out flex items-center justify-center ${
-                  isDark ? "translate-x-6" : "translate-x-1"
-                }`}
-              >
-                <Sun
-                  className={`w-4 h-4 text-amber-500 absolute transition-all duration-300 ${
-                    isDark
-                      ? "opacity-0 rotate-180 scale-0"
-                      : "opacity-100 rotate-0 scale-100"
-                  }`}
-                />
-                <Moon
-                  className={`w-4 h-4 text-slate-700 absolute transition-all duration-300 ${
-                    isDark
-                      ? "opacity-100 rotate-0 scale-100"
-                      : "opacity-0 -rotate-180 scale-0"
-                  }`}
-                />
+              <div className={sliderClass}>
+                <Sun className={sunClass} />
+                <Moon className={moonClass} />
               </div>
             </button>
           )}
@@ -87,6 +84,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;

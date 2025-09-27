@@ -49,8 +49,8 @@ const Header = memo(() => {
           <img src="/favicon.svg" alt="Studio YYH Logo" className="w-6 h-6" />
           <span>STUDIO YYH.</span>
         </a>
-        <div className="flex items-center space-x-8">
-          <nav className="space-x-8">
+        <div className="flex items-center space-x-2 md:space-x-8">
+          <nav className="space-x-1 md:space-x-8">
             <a
               href="#about"
               className="text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"

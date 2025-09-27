@@ -55,13 +55,19 @@ const Header = memo(() => {
               href="#about"
               className="text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
             >
-              About
+              首页
             </a>
             <a
               href="#works"
               className="text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
             >
-              Works
+              作品
+            </a>
+            <a
+              href="#footprints"
+              className="text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
+            >
+              足迹
             </a>
           </nav>
           {/* Theme Toggle */}

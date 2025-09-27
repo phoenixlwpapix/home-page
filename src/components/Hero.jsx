@@ -11,13 +11,13 @@ const Hero = () => {
     >
       <div className="text-center px-6 py-20 animate-fade-in-up">
         <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-wider text-primary dark:text-primary">
-          STUDIO YYH.
+          YYH.的个人主页
           <span className="block text-primary/80 dark:text-primary/80 text-3xl md:text-5xl font-black mt-4 tracking-wider drop-shadow-lg">
             Youthful, Yummy, Happy
           </span>
         </h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-primary/70 dark:text-primary/70 mb-10 leading-relaxed font-medium">
-          专注于构建高性能、用户友好的 Web 应用。
+          跆拳道，网球，游泳，计算机编程。
         </p>
         <div className="flex justify-center space-x-6">
           <a

@@ -2,6 +2,7 @@
 import React, { useState, useEffect, memo } from "react";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
+import { THEME_STYLES, getThemeToggleStyles } from "../constants/styles";
 
 const Header = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,22 +16,12 @@ const Header = memo(() => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Style constants for better readability
+  // Get theme toggle styles
   const buttonBackground = isDark
-    ? "linear-gradient(to right, rgb(71, 85, 105), rgb(15, 23, 42))"
-    : "linear-gradient(to right, oklch(0.82 0.09 235), #33A9D8)";
+    ? THEME_STYLES.buttonBackground.dark
+    : THEME_STYLES.buttonBackground.light;
 
-  const sliderClass = `relative w-6 h-6 bg-white rounded-full shadow-md transform transition-all duration-300 ease-out flex items-center justify-center ${
-    isDark ? "translate-x-6" : "translate-x-1"
-  }`;
-
-  const sunClass = `w-4 h-4 text-amber-500 absolute transition-all duration-300 ease-out ${
-    isDark ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"
-  }`;
-
-  const moonClass = `w-4 h-4 text-slate-700 absolute transition-all duration-300 ease-out ${
-    isDark ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"
-  }`;
+  const { sliderClass, sunClass, moonClass } = getThemeToggleStyles(isDark);
 
   return (
     <header
@@ -49,8 +40,8 @@ const Header = memo(() => {
           <img src="/favicon.svg" alt="Studio YYH Logo" className="w-6 h-6" />
           <span>STUDIO YYH.</span>
         </a>
-        <div className="flex items-center space-x-2 md:space-x-8">
-          <nav className="space-x-1 md:space-x-8">
+        <div className="flex items-center space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8">
+          <nav className="space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8">
             <a
               href="#about"
               className="text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
@@ -74,7 +65,7 @@ const Header = memo(() => {
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="relative w-14 h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r shadow-lg transform hover:scale-105 ml-4"
+              className="relative w-14 h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r shadow-lg transform hover:scale-105 ml-2"
               style={{ background: buttonBackground }}
               aria-label={
                 isDark ? "Switch to light mode" : "Switch to dark mode"

@@ -17,7 +17,7 @@ const Hero = () => {
           </span>
         </h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-primary/70 dark:text-primary/70 mb-10 leading-relaxed font-medium">
-          跆拳道，网球，游泳，计算机编程。
+          跆拳道，网球，游泳，AI编程。
         </p>
         <div className="flex justify-center space-x-6">
           <a

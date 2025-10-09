@@ -43,10 +43,28 @@
   html {
     /* 开启平滑滚动 */
     scroll-behavior: smooth;
+    /* 确保移动端视口正确设置 */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
   body {
     /* 应用基础背景和字体颜色 */
     @apply bg-background text-foreground;
+    /* 防止水平滚动 */
+    overflow-x: hidden;
+    max-width: 100vw;
+    /* 确保移动端不会出现水平滚动 */
+    position: relative;
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 

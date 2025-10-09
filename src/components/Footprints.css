@@ -1,0 +1,81 @@
+/* Custom styles for carousel arrows in light theme */
+.footprints-carousel .slick-prev:before,
+.footprints-carousel .slick-next:before {
+  color: #374151 !important; /* gray-700 color for better visibility */
+  font-size: 24px !important;
+}
+
+/* Dark theme arrow styles */
+.dark .footprints-carousel .slick-prev:before,
+.dark .footprints-carousel .slick-next:before {
+  color: #d1d5db !important; /* gray-300 for dark theme */
+}
+
+/* Hover effects for arrows */
+.footprints-carousel .slick-prev:hover:before,
+.footprints-carousel .slick-next:hover:before {
+  color: #111827 !important; /* gray-900 on hover */
+}
+
+.dark .footprints-carousel .slick-prev:hover:before,
+.dark .footprints-carousel .slick-next:hover:before {
+  color: #f3f4f6 !important; /* gray-100 on hover in dark mode */
+}
+
+/* Dots styling */
+.footprints-carousel .slick-dots li button:before {
+  color: #9ca3af !important; /* gray-400 for dots */
+}
+
+.dark .footprints-carousel .slick-dots li button:before {
+  color: #6b7280 !important; /* gray-500 for dots in dark mode */
+}
+
+.footprints-carousel .slick-dots li.slick-active button:before {
+  color: #374151 !important; /* gray-700 for active dot */
+}
+
+.dark .footprints-carousel .slick-dots li.slick-active button:before {
+  color: #d1d5db !important; /* gray-300 for active dot in dark mode */
+}
+
+/* Fix overflow and shadow issues */
+.footprints-carousel {
+  overflow: hidden !important;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.footprints-carousel .slick-list {
+  overflow: hidden !important;
+  margin: 0;
+  padding: 10px 0;
+  max-width: 100%;
+}
+
+.footprints-carousel .slick-track {
+  display: flex !important;
+}
+
+.footprints-carousel .slick-slide {
+  height: inherit !important;
+  padding: 0 5px;
+}
+
+.footprints-carousel .slick-slide > div {
+  height: 100%;
+}
+
+/* Card hover adjustments */
+.footprints-carousel .photo-card {
+  transition: all 0.3s ease !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+}
+
+.footprints-carousel .photo-card:hover {
+  transform: translateY(-8px) translateZ(0) !important;
+  z-index: 10 !important;
+  position: relative !important;
+}

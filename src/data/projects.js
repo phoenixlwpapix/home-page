@@ -22,12 +22,4 @@ export const projects = [
     demoUrl: "https://math-toolkit.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/math-toolkit",
   },
-  {
-    title: "Coming Soon...",
-    description: "一个轻量级的报价单生成系统。",
-    imageUrl:
-      "https://placehold.co/600x400/10B981/FFFFFF?text=Coming%20Soon...",
-    demoUrl: "#",
-    githubUrl: "#",
-  },
 ];

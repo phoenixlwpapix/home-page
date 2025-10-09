@@ -55,12 +55,6 @@ export const footprints = [
     location: "北京, 中国",
   },
   {
-    title: "巴厘岛 仓古",
-    description: "冲浪胜地的海滩与活力",
-    imageUrl: "/images/footprints/bali_canggu.jpeg",
-    location: "仓古, 巴厘岛",
-  },
-  {
     title: "北京 跆拳道馆",
     description: "武术之都的传统与现代",
     imageUrl: "/images/footprints/pekin_taekwongdo.jpeg",

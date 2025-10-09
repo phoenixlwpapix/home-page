@@ -8,9 +8,9 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="antialiased">
+    <div className="antialiased min-h-screen overflow-x-hidden">
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <Showcase />
         <Footprints />

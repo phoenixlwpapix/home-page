@@ -9,17 +9,17 @@ const Hero = () => {
       id="about"
       className="min-h-screen flex items-center justify-center bg-secondary dark:bg-secondary/50"
     >
-      <div className="text-center px-6 py-20 animate-fade-in-up">
-        <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-wider text-primary dark:text-primary">
+      <div className="text-center px-4 sm:px-6 py-16 sm:py-20 animate-fade-in-up">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 sm:mb-8 tracking-wider text-primary dark:text-primary leading-tight">
           YYH.的个人主页
-          <span className="block text-primary/80 dark:text-primary/80 text-3xl md:text-5xl font-black mt-4 tracking-wider drop-shadow-lg">
+          <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-3xl md:text-5xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
             Youthful, Yummy, Happy
           </span>
         </h1>
-        <p className="max-w-2xl mx-auto text-lg md:text-xl text-primary/70 dark:text-primary/70 mb-10 leading-relaxed font-medium">
-          跆拳道，网球，游泳，AI编程。
+        <p className="max-w-xl sm:max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-primary/70 dark:text-primary/70 mb-10 sm:mb-12 leading-loose font-medium">
+          跆拳道，网球，游泳，旅行。
         </p>
-        <div className="flex justify-center space-x-6">
+        <div className="flex justify-center space-x-6 sm:space-x-8">
           <a
             href="https://github.com/phoenixlwpapix"
             target="_blank"
@@ -43,9 +43,9 @@ const Hero = () => {
             <FaEnvelope className="w-8 h-8 text-accent dark:text-accent" />
           </a>
         </div>
-        <div className="mt-12">
+        <div className="mt-12 sm:mt-16">
           <FaChevronDown
-            className="w-8 h-8 text-primary/60 dark:text-primary/60 animate-bounce cursor-pointer mx-auto"
+            className="w-6 h-6 sm:w-8 sm:h-8 text-primary/60 dark:text-primary/60 animate-bounce cursor-pointer mx-auto"
             onClick={() =>
               document
                 .getElementById("works")

@@ -40,6 +40,10 @@ const Footprints = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false, // Hide default arrows
+    swipe: true, // Enable swipe/touch functionality
+    swipeToSlide: true, // Allow swiping directly to any slide
+    touchThreshold: 10, // Lower threshold for more responsive touch
+    touchMove: true, // Enable touch move
     responsive: [
       {
         breakpoint: 1024,
@@ -51,8 +55,10 @@ const Footprints = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: true, // Center the single slide
+          centerPadding: "20px", // Add some padding to show parts of next/prev slides
         },
       },
       {
@@ -60,6 +66,8 @@ const Footprints = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: true, // Center the single slide
+          centerPadding: "0px", // No padding on very small screens
         },
       },
     ],
@@ -77,7 +85,7 @@ const Footprints = () => {
             style={{ left: "clamp(10px, calc(50% - 120px), 20%)" }}
             onClick={() => sliderRef.current?.slickPrev()}
           >
-            <ChevronLeft size={16} className="sm:size-20" />
+            <ChevronLeft size={16} className="sm:size-6" />
           </button>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary dark:text-primary">
@@ -89,7 +97,7 @@ const Footprints = () => {
             style={{ right: "clamp(10px, calc(50% - 120px), 20%)" }}
             onClick={() => sliderRef.current?.slickNext()}
           >
-            <ChevronRight size={16} className="sm:size-20" />
+            <ChevronRight size={16} className="sm:size-6" />
           </button>
         </div>
         <div className="py-2 sm:py-4 footprints-carousel">

@@ -42,7 +42,7 @@
 /* Fix overflow and shadow issues */
 .footprints-carousel {
   overflow: hidden !important;
-  padding: 0;
+  padding: 30px 0;
   margin: 0;
   max-width: 100%;
 }
@@ -50,7 +50,7 @@
 .footprints-carousel .slick-list {
   overflow: hidden !important;
   margin: 0;
-  padding: 10px 0;
+  padding: 20px 0;
   max-width: 100%;
 }
 
@@ -65,6 +65,40 @@
 
 .footprints-carousel .slick-slide > div {
   height: 100%;
+}
+
+/* Mobile-specific styles for centered single image */
+@media (max-width: 768px) {
+  .footprints-carousel .slick-slide {
+    padding: 0;
+  }
+
+  .footprints-carousel .slick-center .photo-card {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .photo-card {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 640px) {
+  .photo-card {
+    max-width: 95%;
+  }
+
+  .photo-card img {
+    max-height: 70vh;
+  }
 }
 
 /* Card hover adjustments */

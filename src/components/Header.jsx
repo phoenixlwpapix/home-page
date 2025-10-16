@@ -40,7 +40,7 @@ const Header = memo(() => {
           <img src="/favicon.svg" alt="Studio YYH Logo" className="w-6 h-6" />
           <span>STUDIO YYH.</span>
         </a>
-        <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-6 lg:space-x-8 overflow-x-auto">
+        <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-6 lg:space-x-8">
           <nav className="flex space-x-2 sm:space-x-3 md:space-x-6 lg:space-x-8 whitespace-nowrap">
             <a
               href="#about"

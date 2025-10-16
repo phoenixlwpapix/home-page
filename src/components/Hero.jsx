@@ -11,8 +11,8 @@ const Hero = () => {
     >
       <div className="text-center px-4 sm:px-6 py-16 sm:py-20 animate-fade-in-up">
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 sm:mb-8 tracking-wider text-primary dark:text-primary leading-tight">
-          YYH.的个人主页
-          <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-3xl md:text-5xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
+          <span className="text-accent dark:text-accent">Aaron</span>的个人主页
+          <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-2xl md:text-4xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
             Youthful, Yummy, Happy
           </span>
         </h1>

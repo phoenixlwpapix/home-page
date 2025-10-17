@@ -31,7 +31,7 @@ const ProjectCard = ({
       </p>
       <div className="flex space-x-3">
         <div className="px-4 py-2 bg-accent dark:bg-accent text-white font-semibold rounded-lg shadow hover:bg-accent/90 dark:hover:bg-accent/90 transition-transform transform hover:-translate-y-0.5">
-          {language === "zh" ? "演示" : "Demo"}
+          {language === "zh" ? "打开应用" : "Demo"}
         </div>
         <a
           href={githubUrl}

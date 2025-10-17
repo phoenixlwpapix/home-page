@@ -42,15 +42,14 @@ export const projects = [
     githubUrl: "https://github.com/phoenixlwpapix/phoenixlwpapix.github.io",
   },
   {
-    title: { zh: "Weather Wizard", en: "Weather Wizard" },
+    title: { zh: "Gemini创意坊", en: "Gemini Suite" },
     description: {
-      zh: "一款神奇的天气预报应用，配备AI预测功能。",
-      en: "A magical weather forecasting app with AI prediction features.",
+      zh: "一键释放创意，集成AI对话、文本生图与图片编辑。",
+      en: "Empower your creativity with AI chat, image generation and photo editing in one seamless app.",
     },
-    imageUrl:
-      "https://placehold.co/600x400/0BBE99/FFFFFF?text=Weather%20Wizard",
-    demoUrl: "https://weather-wizard.studioyyh.tech/",
-    githubUrl: "https://github.com/phoenixlwpapix/weather-wizard",
+    imageUrl: "https://placehold.co/600x400/0BBE99/FFFFFF?text=Gemini%20Suite",
+    demoUrl: "https://gemini-suite.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/gemini-suite",
   },
   {
     title: { zh: "Recipe Rover", en: "Recipe Rover" },

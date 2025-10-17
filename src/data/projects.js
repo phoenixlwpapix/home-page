@@ -52,7 +52,7 @@ export const projects = [
     githubUrl: "https://github.com/phoenixlwpapix/gemini-suite",
   },
   {
-    title: { zh: "Recipe Rover", en: "Recipe Rover" },
+    title: { zh: "食旅星球", en: "Recipe Rover" },
     description: {
       zh: "通过智能配料匹配，探索世界各地的美食食谱。",
       en: "Explore global cuisines through intelligent ingredient matching.",

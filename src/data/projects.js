@@ -3,8 +3,8 @@ export const projects = [
   {
     title: { zh: "知了英语", en: "Cicada English" },
     description: {
-      zh: "AI驱动的英语学习平台",
-      en: "AI-powered English learning platform",
+      zh: "AI驱动的英语阅读训练平台",
+      en: "AI-powered English reading skill platform",
     },
     imageUrl:
       "https://placehold.co/600x400/33A9D8/FFFFFF?text=Cicada%20English",

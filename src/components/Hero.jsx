@@ -16,7 +16,7 @@ const Hero = () => {
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 sm:mb-8 tracking-wider text-primary dark:text-primary leading-tight">
           {language === "zh" ? (
             <>
-              以恒<span className="text-accent dark:text-accent">YYH</span>
+              <span className="text-accent dark:text-accent">YYH以恒</span>
               的个人主页
               <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-2xl md:text-4xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
                 Youthful, Yummy, Happy
@@ -24,7 +24,7 @@ const Hero = () => {
             </>
           ) : (
             <>
-              <span className="text-accent dark:text-accent">YYH</span>'s
+              <span className="text-accent dark:text-accent">YYH Aaron</span>'s
               Homepage
               <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-2xl md:text-4xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
                 Youthful, Yummy, Happy
@@ -35,7 +35,7 @@ const Hero = () => {
         <p className="max-w-xl sm:max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-primary/70 dark:text-primary/70 mb-10 sm:mb-12 leading-loose font-medium">
           {language === "zh"
             ? "我的爱好：跆拳道，网球，游泳，旅行..."
-            : "My hobbies: Taekwondo, tennis, swimming, travel..."}
+            : "Hobbies: Taekwondo, tennis, swimming, travel..."}
         </p>
         <div className="flex justify-center space-x-6 sm:space-x-8">
           <a

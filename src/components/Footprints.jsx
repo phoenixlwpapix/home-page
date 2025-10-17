@@ -10,7 +10,7 @@ import "./Footprints.css";
 
 const PhotoCard = ({ title, description, imageUrl, location, language }) => (
   <div className="h-full px-2">
-    <div className="photo-card block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-2xl transition-all duration-300 transform h-full">
+    <div className="photo-card block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-xl transition-all duration-300 transform h-full">
       <img
         src={imageUrl}
         alt={title[language]}

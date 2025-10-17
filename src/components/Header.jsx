@@ -67,7 +67,7 @@ const Header = memo(() => {
           {languageMounted && (
             <button
               onClick={toggleLanguage}
-              className="relative w-12 h-8 sm:w-14 sm:h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r shadow-lg transform hover:scale-105 flex-shrink-0 bg-primary/10 dark:bg-primary/20"
+              className="relative w-12 h-8 sm:w-14 sm:h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r transform hover:scale-105 flex-shrink-0 bg-primary/10 dark:bg-primary/20"
               aria-label={
                 language === "zh" ? "Switch to English" : "切换到中文"
               }
@@ -81,7 +81,7 @@ const Header = memo(() => {
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="relative w-12 h-8 sm:w-14 sm:h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r shadow-lg transform hover:scale-105 flex-shrink-0"
+              className="relative w-12 h-8 sm:w-14 sm:h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r transform hover:scale-105 flex-shrink-0"
               style={{ background: buttonBackground }}
               aria-label={
                 isDark ? "Switch to light mode" : "Switch to dark mode"

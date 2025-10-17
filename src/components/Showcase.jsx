@@ -1,8 +1,16 @@
 // src/components/Showcase.jsx
 import React from "react";
 import { projects } from "../data/projects";
+import { useLanguage } from "../hooks/useLanguage";
 
-const ProjectCard = ({ title, description, imageUrl, demoUrl, githubUrl }) => (
+const ProjectCard = ({
+  title,
+  description,
+  imageUrl,
+  demoUrl,
+  githubUrl,
+  language,
+}) => (
   <a
     href={demoUrl}
     target="_blank"
@@ -11,17 +19,19 @@ const ProjectCard = ({ title, description, imageUrl, demoUrl, githubUrl }) => (
   >
     <img
       src={imageUrl}
-      alt={title}
+      alt={title[language]}
       className="w-full aspect-video object-cover"
     />
     <div className="p-6">
       <h3 className="text-xl font-bold mb-3 text-primary dark:text-primary">
-        {title}
+        {title[language]}
       </h3>
-      <p className="text-primary/70 dark:text-primary/70 mb-5">{description}</p>
+      <p className="text-primary/70 dark:text-primary/70 mb-5">
+        {description[language]}
+      </p>
       <div className="flex space-x-3">
         <div className="px-4 py-2 bg-accent dark:bg-accent text-white font-semibold rounded-lg shadow hover:bg-accent/90 dark:hover:bg-accent/90 transition-transform transform hover:-translate-y-0.5">
-          Demo
+          {language === "zh" ? "演示" : "Demo"}
         </div>
         <a
           href={githubUrl}
@@ -37,6 +47,8 @@ const ProjectCard = ({ title, description, imageUrl, demoUrl, githubUrl }) => (
 );
 
 const Showcase = () => {
+  const { language } = useLanguage();
+
   return (
     <section
       id="works"
@@ -44,11 +56,11 @@ const Showcase = () => {
     >
       <div className="container mx-auto px-4 sm:px-6">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 sm:mb-12 text-primary dark:text-primary">
-          我的应用
+          {language === "zh" ? "我的应用" : "My Apps"}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard key={index} {...project} language={language} />
           ))}
         </div>
       </div>

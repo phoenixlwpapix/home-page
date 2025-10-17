@@ -1,12 +1,14 @@
 // src/components/Header.jsx
 import React, { useState, useEffect, memo } from "react";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Languages } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
+import { useLanguage } from "../hooks/useLanguage";
 import { THEME_STYLES, getThemeToggleStyles } from "../constants/styles";
 
 const Header = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { isDark, toggleTheme, mounted } = useTheme();
+  const { language, toggleLanguage, mounted: languageMounted } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,21 +48,35 @@ const Header = memo(() => {
               href="#about"
               className="text-sm sm:text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
             >
-              首页
+              {language === "zh" ? "首页" : "Home"}
             </a>
             <a
               href="#works"
               className="text-sm sm:text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
             >
-              作品
+              {language === "zh" ? "作品" : "Works"}
             </a>
             <a
               href="#footprints"
               className="text-sm sm:text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
             >
-              足迹
+              {language === "zh" ? "足迹" : "Footprints"}
             </a>
           </nav>
+          {/* Language Toggle */}
+          {languageMounted && (
+            <button
+              onClick={toggleLanguage}
+              className="relative w-12 h-8 sm:w-14 sm:h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r shadow-lg transform hover:scale-105 flex-shrink-0 bg-primary/10 dark:bg-primary/20"
+              aria-label={
+                language === "zh" ? "Switch to English" : "切换到中文"
+              }
+            >
+              <div className="flex items-center justify-center w-full h-full">
+                <Languages className="w-4 h-4 sm:w-5 sm:h-5 text-primary dark:text-primary" />
+              </div>
+            </button>
+          )}
           {/* Theme Toggle */}
           {mounted && (
             <button

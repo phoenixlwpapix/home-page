@@ -2,8 +2,11 @@
 import React from "react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaEnvelope, FaChevronDown } from "react-icons/fa";
+import { useLanguage } from "../hooks/useLanguage";
 
 const Hero = () => {
+  const { language } = useLanguage();
+
   return (
     <section
       id="about"
@@ -11,14 +14,28 @@ const Hero = () => {
     >
       <div className="text-center px-4 sm:px-6 py-16 sm:py-20 animate-fade-in-up">
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 sm:mb-8 tracking-wider text-primary dark:text-primary leading-tight">
-          以恒<span className="text-accent dark:text-accent">YYH</span>
-          的个人主页
-          <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-2xl md:text-4xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
-            Youthful, Yummy, Happy
-          </span>
+          {language === "zh" ? (
+            <>
+              以恒<span className="text-accent dark:text-accent">YYH</span>
+              的个人主页
+              <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-2xl md:text-4xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
+                Youthful, Yummy, Happy
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="text-accent dark:text-accent">YYH</span>'s
+              Homepage
+              <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-2xl md:text-4xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
+                Youthful, Yummy, Happy
+              </span>
+            </>
+          )}
         </h1>
         <p className="max-w-xl sm:max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-primary/70 dark:text-primary/70 mb-10 sm:mb-12 leading-loose font-medium">
-          我的爱好：跆拳道，网球，游泳，旅行。
+          {language === "zh"
+            ? "我的爱好：跆拳道，网球，游泳，旅行..."
+            : "My hobbies: Taekwondo, tennis, swimming, travel..."}
         </p>
         <div className="flex justify-center space-x-6 sm:space-x-8">
           <a

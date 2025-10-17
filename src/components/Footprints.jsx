@@ -3,26 +3,29 @@ import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import { footprints } from "../data/footprints";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "../hooks/useLanguage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Footprints.css";
 
-const PhotoCard = ({ title, description, imageUrl, location }) => (
+const PhotoCard = ({ title, description, imageUrl, location, language }) => (
   <div className="h-full px-2">
     <div className="photo-card block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-2xl transition-all duration-300 transform h-full">
       <img
         src={imageUrl}
-        alt={title}
+        alt={title[language]}
         className="w-full aspect-[3/4] object-cover"
       />
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2 text-primary dark:text-primary">
-          {title}
+          {title[language]}
         </h3>
         <p className="text-sm text-primary/60 dark:text-primary/60 mb-2">
-          {location}
+          {location[language]}
         </p>
-        <p className="text-primary/70 dark:text-primary/70">{description}</p>
+        <p className="text-primary/70 dark:text-primary/70">
+          {description[language]}
+        </p>
       </div>
     </div>
   </div>
@@ -34,6 +37,7 @@ const Footprints = () => {
     typeof window !== "undefined" ? window.innerWidth : 1200
   );
   const [mounted, setMounted] = useState(false);
+  const { language } = useLanguage();
 
   // Set mounted to true when component mounts on client
   useEffect(() => {
@@ -109,7 +113,7 @@ const Footprints = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-center mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary dark:text-primary">
-              我的足迹
+              {language === "zh" ? "我的足迹" : "My Footprints"}
             </h2>
           </div>
           <div className="py-2 sm:py-4 flex justify-center">
@@ -136,7 +140,7 @@ const Footprints = () => {
           </button>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary dark:text-primary">
-            我的足迹
+            {language === "zh" ? "我的足迹" : "My Footprints"}
           </h2>
 
           <button
@@ -150,7 +154,7 @@ const Footprints = () => {
         <div className="py-2 sm:py-4 footprints-carousel">
           <Slider ref={sliderRef} {...settings}>
             {footprints.map((footprint, index) => (
-              <PhotoCard key={index} {...footprint} />
+              <PhotoCard key={index} {...footprint} language={language} />
             ))}
           </Slider>
         </div>

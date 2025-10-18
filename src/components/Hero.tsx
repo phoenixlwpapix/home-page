@@ -3,23 +3,38 @@ import React from "react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaEnvelope, FaChevronDown } from "react-icons/fa";
 import { useLanguage } from "../hooks/useLanguage";
+import { useTheme } from "../hooks/useTheme";
+import { Particles } from "./ui/particles";
 
 const Hero = () => {
   const { language } = useLanguage();
+  const { isDark } = useTheme();
 
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center bg-secondary dark:bg-secondary/50"
+      className="min-h-screen flex items-center justify-center bg-secondary dark:bg-secondary/50 relative overflow-hidden"
     >
-      <div className="text-center px-4 sm:px-6 py-16 sm:py-20 animate-fade-in-up">
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        staticity={50}
+        ease={50}
+        size={0.4}
+        color={isDark ? "#ffffff" : "#000000"}
+        vx={0}
+        vy={0}
+      />
+      <div className="text-center px-4 sm:px-6 py-16 sm:py-20 animate-fade-in-up relative z-10">
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 sm:mb-8 tracking-wider text-primary dark:text-primary leading-tight">
           {language === "zh" ? (
             <>
               <span className="text-accent dark:text-accent">YYH以恒</span>
               的个人主页
               <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-2xl md:text-4xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
-                Youthful, Yummy, Happy
+                <span className="text-accent dark:text-accent">Y</span>outhful,{" "}
+                <span className="text-accent dark:text-accent">Y</span>ummy,{" "}
+                <span className="text-accent dark:text-accent">H</span>appy
               </span>
             </>
           ) : (
@@ -27,7 +42,9 @@ const Hero = () => {
               <span className="text-accent dark:text-accent">YYH Aaron</span>'s
               Homepage
               <span className="block text-primary/80 dark:text-primary/80 text-2xl sm:text-2xl md:text-4xl font-black mt-4 sm:mt-6 tracking-wider drop-shadow-lg leading-tight">
-                Youthful, Yummy, Happy
+                <span className="text-accent dark:text-accent">Y</span>outhful,{" "}
+                <span className="text-accent dark:text-accent">Y</span>ummy,{" "}
+                <span className="text-accent dark:text-accent">H</span>appy
               </span>
             </>
           )}

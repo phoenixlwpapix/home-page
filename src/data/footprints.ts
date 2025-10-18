@@ -1,5 +1,12 @@
-// src/data/footprints.js
-export const footprints = [
+// src/data/footprints.ts
+export interface Footprint {
+  title: { zh: string; en: string };
+  description: { zh: string; en: string };
+  imageUrl: string;
+  location: { zh: string; en: string };
+}
+
+export const footprints: Footprint[] = [
   {
     title: { zh: "巴厘岛 Ayana Resort", en: "Bali Ayana Resort" },
     description: {

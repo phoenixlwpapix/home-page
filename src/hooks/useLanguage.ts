@@ -1,6 +1,14 @@
 import { createContext, useContext } from "react";
 
-export const LanguageContext = createContext();
+export interface LanguageContextType {
+  language: "zh" | "en";
+  toggleLanguage: () => void;
+  mounted: boolean;
+}
+
+export const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined
+);
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);

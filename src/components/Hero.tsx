@@ -1,4 +1,4 @@
-// src/components/Hero.jsx
+// src/components/Hero.tsx
 import React from "react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaEnvelope, FaChevronDown } from "react-icons/fa";
@@ -67,7 +67,7 @@ const Hero = () => {
             onClick={() =>
               document
                 .getElementById("works")
-                .scrollIntoView({ behavior: "smooth" })
+                ?.scrollIntoView({ behavior: "smooth" })
             }
           />
         </div>

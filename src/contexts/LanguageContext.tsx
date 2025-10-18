@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { LanguageContext } from "../hooks/useLanguage";
 
-export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("zh"); // 默认中文
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [language, setLanguage] = useState<"zh" | "en">("zh"); // 默认中文
   const [mounted, setMounted] = useState(false);
 
   // Load language from localStorage on mount
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage) {
+    if (savedLanguage && (savedLanguage === "zh" || savedLanguage === "en")) {
       setLanguage(savedLanguage);
     }
     setMounted(true);

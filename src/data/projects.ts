@@ -1,5 +1,13 @@
-// src/data/projects.js
-export const projects = [
+// src/data/projects.ts
+export interface Project {
+  title: { zh: string; en: string };
+  description: { zh: string; en: string };
+  imageUrl: string;
+  demoUrl: string;
+  githubUrl: string;
+}
+
+export const projects: Project[] = [
   {
     title: { zh: "知了英语", en: "Cicada English" },
     description: {

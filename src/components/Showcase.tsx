@@ -1,9 +1,14 @@
-// src/components/Showcase.jsx
+// src/components/Showcase.tsx
 import React from "react";
 import { projects } from "../data/projects";
+import type { Project } from "../data/projects";
 import { useLanguage } from "../hooks/useLanguage";
 
-const ProjectCard = ({
+interface ProjectCardProps extends Project {
+  language: "zh" | "en";
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   imageUrl,

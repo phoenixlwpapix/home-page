@@ -1,4 +1,4 @@
-// src/components/Header.jsx
+// src/components/Header.tsx
 import React, { useState, useEffect, memo } from "react";
 import { Sun, Moon, Languages } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";

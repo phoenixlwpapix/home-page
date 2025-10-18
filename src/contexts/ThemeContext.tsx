@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ThemeContext } from "../hooks/useTheme";
 
-export const ThemeProvider = ({ children }) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [isDark, setIsDark] = useState(false);
   const [mounted, setMounted] = useState(false);
 

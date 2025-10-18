@@ -1,6 +1,14 @@
 import { createContext, useContext } from "react";
 
-export const ThemeContext = createContext();
+export interface ThemeContextType {
+  isDark: boolean;
+  toggleTheme: () => void;
+  mounted: boolean;
+}
+
+export const ThemeContext = createContext<ThemeContextType | undefined>(
+  undefined
+);
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);

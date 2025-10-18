@@ -1,4 +1,4 @@
-// src/constants/styles.js
+// src/constants/styles.ts
 // 主题样式常量
 export const THEME_STYLES = {
   buttonBackground: {
@@ -8,7 +8,7 @@ export const THEME_STYLES = {
 };
 
 // 主题切换按钮样式类名生成器
-export const getThemeToggleStyles = (isDark) => ({
+export const getThemeToggleStyles = (isDark: boolean) => ({
   sliderClass: `relative w-6 h-6 bg-white rounded-full shadow-md transform transition-all duration-300 ease-out flex items-center justify-center ${
     isDark ? "translate-x-6" : "translate-x-1"
   }`,

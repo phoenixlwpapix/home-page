@@ -16,11 +16,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrl,
   language,
 }) => (
-  <a
-    href={demoUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+  <div
+    onClick={() => window.open(demoUrl, "_blank", "noopener,noreferrer")}
+    className="block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
   >
     <img
       src={imageUrl}
@@ -38,17 +36,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="px-4 py-2 bg-accent dark:bg-accent text-white font-semibold rounded-lg shadow hover:bg-accent/90 dark:hover:bg-accent/90 transition-transform transform hover:-translate-y-0.5">
           {language === "zh" ? "打开应用" : "Demo"}
         </div>
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 bg-primary/10 dark:bg-primary/10 text-primary dark:text-primary font-semibold rounded-lg shadow hover:bg-primary/20 dark:hover:bg-primary/20 transition-transform transform hover:-translate-y-0.5"
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            window.open(githubUrl, "_blank", "noopener,noreferrer");
+          }}
+          className="px-4 py-2 bg-primary/10 dark:bg-primary/10 text-primary dark:text-primary font-semibold rounded-lg shadow hover:bg-primary/20 dark:hover:bg-primary/20 transition-transform transform hover:-translate-y-0.5 cursor-pointer"
         >
           GitHub
-        </a>
+        </div>
       </div>
     </div>
-  </a>
+  </div>
 );
 
 const Showcase = () => {

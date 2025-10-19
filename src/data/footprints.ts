@@ -109,4 +109,13 @@ export const footprints: Footprint[] = [
     imageUrl: "/images/footprints/vietnam_Nha_Trang.webp",
     location: { zh: "芽庄, 越南", en: "Nha Trang, Vietnam" },
   },
+  {
+    title: { zh: "巴厘岛 仓古", en: "Bali Canggu" },
+    description: {
+      zh: "冲浪天堂的海滩与活力",
+      en: "Beach and vitality of the surfing paradise",
+    },
+    imageUrl: "/images/footprints/bali_canggu.webp",
+    location: { zh: "仓古, 巴厘岛", en: "Canggu, Bali" },
+  },
 ];

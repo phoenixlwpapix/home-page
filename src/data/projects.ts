@@ -40,6 +40,17 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/math-toolkit",
   },
   {
+    title: { zh: "芝麻问答", en: "Sesame Explainer" },
+    description: {
+      zh: "智能问答系统，提供详细解答和知识解释。",
+      en: "Intelligent Q&A system providing detailed answers and knowledge explanations.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/9333EA/FFFFFF?text=Sesame%20Explainer",
+    demoUrl: "https://sesame-explainer.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
+  },
+  {
     title: { zh: "Chez Liliane", en: "Chez Liliane" },
     description: {
       zh: "一个烘焙爱好者的个人主页。",

@@ -182,3 +182,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Embla Carousel Styles */
+.embla {
+  max-width: 80rem;
+  margin: auto;
+  --slide-height: 10rem;
+  --slide-spacing: 2rem;
+  --slide-size: 50%;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}

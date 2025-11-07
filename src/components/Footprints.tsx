@@ -1,5 +1,6 @@
 // src/components/Footprints.tsx
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import { footprints } from "../data/footprints";
 import type { Footprint } from "../data/footprints";
 import { useLanguage } from "../hooks/useLanguage";
@@ -15,56 +16,39 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
   location,
   language,
 }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
-    <>
-      <div className="photo-card block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-        <img
-          src={imageUrl}
-          alt={title[language]}
-          className="w-full aspect-[3/4] object-cover cursor-pointer"
-          onClick={() => setIsModalOpen(true)}
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-2 text-primary dark:text-primary">
-            {title[language]}
-          </h3>
-          <p className="text-sm text-primary/60 dark:text-primary/60 mb-2">
-            {location[language]}
-          </p>
-          <p className="text-primary/70 dark:text-primary/70">
-            {description[language]}
-          </p>
-        </div>
+    <div className="photo-card block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+      <img
+        src={imageUrl}
+        alt={title[language]}
+        className="w-full aspect-[3/4] object-cover"
+      />
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2 text-primary dark:text-primary">
+          {title[language]}
+        </h3>
+        <p className="text-sm text-primary/60 dark:text-primary/60 mb-2">
+          {location[language]}
+        </p>
+        <p className="text-primary/70 dark:text-primary/70">
+          {description[language]}
+        </p>
       </div>
-
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div className="relative w-full h-full p-4 flex items-center justify-center">
-            <img
-              src={imageUrl}
-              alt={title[language]}
-              className="max-w-full max-h-full object-contain"
-            />
-            <button
-              className="absolute top-4 right-4 text-white text-2xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center"
-              onClick={() => setIsModalOpen(false)}
-            >
-              ×
-            </button>
-          </div>
-        </div>
-      )}
-    </>
+    </div>
   );
 };
 
 const Footprints = () => {
   const { language } = useLanguage();
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   return (
     <section
@@ -77,10 +61,31 @@ const Footprints = () => {
             {language === "zh" ? "我的足迹" : "My Footprints"}
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {footprints.map((footprint, index) => (
-            <PhotoCard key={index} {...footprint} language={language} />
-          ))}
+        <div className="embla relative">
+          <div className="embla__viewport py-4" ref={emblaRef}>
+            <div className="embla__container">
+              {footprints.map((footprint, index) => (
+                <div
+                  key={index}
+                  className="embla__slide flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_40%] lg:flex-[0_0_30%]"
+                >
+                  <PhotoCard {...footprint} language={language} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <button
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 dark:bg-secondary/80 backdrop-blur-sm text-primary dark:text-primary p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-secondary hover:scale-110 transition-all duration-300 z-10"
+            onClick={scrollPrev}
+          >
+            ‹
+          </button>
+          <button
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 dark:bg-secondary/80 backdrop-blur-sm text-primary dark:text-primary p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-secondary hover:scale-110 transition-all duration-300 z-10"
+            onClick={scrollNext}
+          >
+            ›
+          </button>
         </div>
       </div>
     </section>

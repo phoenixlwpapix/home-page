@@ -20,6 +20,16 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
   },
   {
+    title: { zh: "Fantasia", en: "Fantasia" },
+    description: {
+      zh: "AI驱动的智能写作助手",
+      en: "AI-driven intelligent writing assistant",
+    },
+    imageUrl: "https://placehold.co/600x400/FF6B6B/FFFFFF?text=Fantasia",
+    demoUrl: "https://fantasia.studioyyh.tech/",
+    githubUrl: "",
+  },
+  {
     title: { zh: "PRD精灵", en: "PRD Genie" },
     description: {
       zh: "帮你更好编写项目产品需求文档并建议技术栈。",

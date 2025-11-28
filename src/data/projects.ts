@@ -15,7 +15,7 @@ export const projects: Project[] = [
       en: "AI-powered English reading skill platform",
     },
     imageUrl:
-      "https://placehold.co/600x400/33A9D8/FFFFFF?text=Cicada%20English?font=roboto",
+      "https://placehold.co/600x400/33A9D8/FFFFFF?text=Cicada%20English&font=roboto",
     demoUrl: "https://cicada-english.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
   },
@@ -26,9 +26,20 @@ export const projects: Project[] = [
       en: "AI-driven intelligent writing assistant",
     },
     imageUrl:
-      "https://placehold.co/600x400/414968/FFFFFF?text=Fantasia?font=roboto",
+      "https://placehold.co/600x400/577B97/FFFFFF?text=Fantasia&font=roboto",
     demoUrl: "https://fantasia.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/fantasia-writer",
+  },
+  {
+    title: { zh: "芝麻问答", en: "Sesame Explainer" },
+    description: {
+      zh: "智能问答系统，提供详细解答和知识解释。",
+      en: "Intelligent Q&A system providing detailed answers and knowledge explanations.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/9333EA/FFFFFF?text=Sesame%20Explainer&font=roboto",
+    demoUrl: "https://sesame-explainer.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
   },
   {
     title: { zh: "PRD精灵", en: "PRD Genie" },
@@ -37,7 +48,7 @@ export const projects: Project[] = [
       en: "Help you write better project product requirement documents and suggest tech stacks.",
     },
     imageUrl:
-      "https://placehold.co/600x400/FD6F60/FFFFFF?text=PRD%20Genie?font=roboto",
+      "https://placehold.co/600x400/FD6F60/FFFFFF?text=PRD%20Genie&font=roboto",
     demoUrl: "https://prd-genie.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/prd-genie",
   },
@@ -48,21 +59,11 @@ export const projects: Project[] = [
       en: "Help you better understand mathematics, physics, and chemistry.",
     },
     imageUrl:
-      "https://placehold.co/600x400/71A9F7/FFFFFF?text=Math%20Toolkit?font=roboto",
+      "https://placehold.co/600x400/71A9F7/FFFFFF?text=Math%20Toolkit&font=roboto",
     demoUrl: "https://math-toolkit.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/math-toolkit",
   },
-  {
-    title: { zh: "芝麻问答", en: "Sesame Explainer" },
-    description: {
-      zh: "智能问答系统，提供详细解答和知识解释。",
-      en: "Intelligent Q&A system providing detailed answers and knowledge explanations.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/9333EA/FFFFFF?text=Sesame%20Explainer?font=roboto",
-    demoUrl: "https://sesame-explainer.studioyyh.tech/",
-    githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
-  },
+
   {
     title: { zh: "Chez Liliane", en: "Chez Liliane" },
     description: {
@@ -70,7 +71,7 @@ export const projects: Project[] = [
       en: "A personal homepage for a baking enthusiast.",
     },
     imageUrl:
-      "https://placehold.co/600x400/f07491/FFFFFF?text=Chez%20Liliane?font=roboto",
+      "https://placehold.co/600x400/f07491/FFFFFF?text=Chez%20Liliane&font=roboto",
     demoUrl: "https://bakery.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/phoenixlwpapix.github.io",
   },
@@ -81,7 +82,7 @@ export const projects: Project[] = [
       en: "Empower your creativity with AI chat, image generation and photo editing in one seamless app.",
     },
     imageUrl:
-      "https://placehold.co/600x400/0BBE99/FFFFFF?text=Gemini%20Suite?font=roboto",
+      "https://placehold.co/600x400/0BBE99/FFFFFF?text=Gemini%20Suite&font=roboto",
     demoUrl: "https://gemini-suite.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/gemini-suite",
   },
@@ -92,7 +93,7 @@ export const projects: Project[] = [
       en: "Explore global cuisines through intelligent ingredient matching.",
     },
     imageUrl:
-      "https://placehold.co/600x400/FFA500/FFFFFF?text=Recipe%20Rover?font=roboto",
+      "https://placehold.co/600x400/FFA500/FFFFFF?text=Recipe%20Rover&font=roboto",
     demoUrl: "https://recipe-rover.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/recipe-rover",
   },

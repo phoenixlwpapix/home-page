@@ -20,15 +20,15 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
   },
   {
-    title: { zh: "Fantasia", en: "Fantasia" },
+    title: { zh: "聊聊机", en: "Chat-O-Matic" },
     description: {
-      zh: "AI驱动的智能写作助手",
-      en: "AI-driven intelligent writing assistant",
+      zh: "随问随答的小小智能伙伴。",
+      en: "Your little smart buddy, ready to answer anytime.",
     },
     imageUrl:
-      "https://placehold.co/600x400/577B97/FFFFFF?text=Fantasia&font=roboto",
-    demoUrl: "https://fantasia.studioyyh.tech/",
-    githubUrl: "https://github.com/phoenixlwpapix/fantasia-writer",
+      "https://placehold.co/600x400/EEDD55/FFFFFF?text=Chat-O-Matic&font=roboto",
+    demoUrl: "https://chat.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/chat-o-matic",
   },
   {
     title: { zh: "芝麻问答", en: "Sesame Explainer" },
@@ -40,6 +40,18 @@ export const projects: Project[] = [
       "https://placehold.co/600x400/9333EA/FFFFFF?text=Sesame%20Explainer&font=roboto",
     demoUrl: "https://sesame-explainer.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
+  },
+  {
+    title: { zh: "Fantasia", en: "Fantasia" },
+    description: {
+      zh: "AI驱动的智能写作助手",
+      en: "AI-driven intelligent writing assistant",
+    },
+
+    imageUrl:
+      "https://placehold.co/600x400/577B97/FFFFFF?text=Fantasia&font=roboto",
+    demoUrl: "https://fantasia.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/fantasia-writer",
   },
   {
     title: { zh: "PRD精灵", en: "PRD Genie" },
@@ -63,7 +75,6 @@ export const projects: Project[] = [
     demoUrl: "https://math-toolkit.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/math-toolkit",
   },
-
   {
     title: { zh: "Chez Liliane", en: "Chez Liliane" },
     description: {
@@ -74,17 +85,6 @@ export const projects: Project[] = [
       "https://placehold.co/600x400/f07491/FFFFFF?text=Chez%20Liliane&font=roboto",
     demoUrl: "https://bakery.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/phoenixlwpapix.github.io",
-  },
-  {
-    title: { zh: "Gemini创意坊", en: "Gemini Suite" },
-    description: {
-      zh: "一键释放创意，集成AI对话、文本生图与图片编辑。",
-      en: "Empower your creativity with AI chat, image generation and photo editing in one seamless app.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/0BBE99/FFFFFF?text=Gemini%20Suite&font=roboto",
-    demoUrl: "https://gemini-suite.studioyyh.tech/",
-    githubUrl: "https://github.com/phoenixlwpapix/gemini-suite",
   },
   {
     title: { zh: "食旅星球", en: "Recipe Rover" },

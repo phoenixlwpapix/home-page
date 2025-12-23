@@ -33,7 +33,9 @@ export const LAYOUT_CLASSES = {
   sectionAlt: "py-20 bg-secondary dark:bg-secondary/50",
   card: "block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2",
   cardContent: "p-6",
-  cardTitle: "text-xl font-bold mb-3 text-primary dark:text-primary",
-  cardDescription: "text-primary/70 dark:text-primary/70 mb-5",
+  cardTitle:
+    "text-2xl font-extrabold text-primary dark:text-primary tracking-tight",
+  cardDescription:
+    "text-primary/70 dark:text-primary/70 line-clamp-2 h-12 text-sm sm:text-base",
   cardMeta: "text-sm text-primary/60 dark:text-primary/60 mb-2",
 };

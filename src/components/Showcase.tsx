@@ -3,6 +3,7 @@ import React from "react";
 import { projects } from "../data/projects";
 import type { Project } from "../data/projects";
 import { useLanguage } from "../hooks/useLanguage";
+import { ExternalLink, Github } from "lucide-react";
 
 interface ProjectCardProps extends Project {
   language: "zh" | "en";
@@ -20,33 +21,46 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     onClick={() => window.open(demoUrl, "_blank", "noopener,noreferrer")}
     className="block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
   >
+    <div className="p-6 pb-4">
+      <div className="flex justify-between items-start mb-3">
+        <div className="flex items-center gap-3">
+          <div className="w-1.5 h-6 bg-accent rounded-full transform origin-bottom group-hover:scale-y-125 transition-transform duration-300" />
+          <h3 className="text-2xl font-extrabold text-primary dark:text-primary group-hover:text-accent transition-colors duration-300 tracking-tight">
+            {title[language]}
+          </h3>
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(demoUrl, "_blank", "noopener,noreferrer");
+            }}
+            className="p-2 rounded-full bg-primary/5 hover:bg-accent hover:text-white transition-all duration-300 text-primary/60"
+            title={language === "zh" ? "打开应用" : "Open Demo"}
+          >
+            <ExternalLink size={20} />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(githubUrl, "_blank", "noopener,noreferrer");
+            }}
+            className="p-2 rounded-full bg-primary/5 hover:bg-primary hover:text-white transition-all duration-300 text-primary/60"
+            title="GitHub"
+          >
+            <Github size={20} />
+          </button>
+        </div>
+      </div>
+      <p className="text-primary/70 dark:text-primary/70 line-clamp-2 h-12 text-sm sm:text-base">
+        {description[language]}
+      </p>
+    </div>
     <img
       src={imageUrl}
       alt={title[language]}
       className="w-full aspect-video object-cover"
     />
-    <div className="p-6">
-      <h3 className="text-xl font-bold mb-3 text-primary dark:text-primary">
-        {title[language]}
-      </h3>
-      <p className="text-primary/70 dark:text-primary/70 mb-5">
-        {description[language]}
-      </p>
-      <div className="flex space-x-3">
-        <div className="px-4 py-2 bg-accent dark:bg-accent text-white font-semibold rounded-lg shadow hover:bg-accent/90 dark:hover:bg-accent/90 transition-transform transform hover:-translate-y-0.5">
-          {language === "zh" ? "打开应用" : "Demo"}
-        </div>
-        <div
-          onClick={(e) => {
-            e.stopPropagation();
-            window.open(githubUrl, "_blank", "noopener,noreferrer");
-          }}
-          className="px-4 py-2 bg-primary/10 dark:bg-primary/10 text-primary dark:text-primary font-semibold rounded-lg shadow hover:bg-primary/20 dark:hover:bg-primary/20 transition-transform transform hover:-translate-y-0.5 cursor-pointer"
-        >
-          GitHub
-        </div>
-      </div>
-    </div>
   </div>
 );
 

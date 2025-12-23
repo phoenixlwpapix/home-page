@@ -70,9 +70,12 @@ const Showcase = () => {
   return (
     <section
       id="works"
-      className="py-16 sm:py-20 bg-secondary dark:bg-secondary/50"
+      className="py-16 sm:py-20 bg-background relative overflow-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-32 -mt-32" />
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 sm:mb-12 text-primary dark:text-primary">
           {language === "zh" ? "我的应用" : "My Apps"}
         </h2>

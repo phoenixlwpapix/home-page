@@ -53,9 +53,12 @@ const Footprints = () => {
   return (
     <section
       id="footprints"
-      className="py-16 sm:py-20 bg-secondary dark:bg-secondary/50"
+      className="py-16 sm:py-20 bg-background relative overflow-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6">
+      {/* Decorative background element */}
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -ml-32 -mb-32" />
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex items-center justify-center mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary dark:text-primary">
             {language === "zh" ? "我的足迹" : "My Footprints"}

@@ -29,7 +29,7 @@ const Header = memo(() => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-secondary/80 dark:bg-secondary/80 backdrop-blur-sm shadow-sm"
+          ? "bg-background/80 dark:bg-background/80 backdrop-blur-sm shadow-sm"
           : "bg-transparent"
       }`}
     >

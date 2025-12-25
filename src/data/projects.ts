@@ -54,6 +54,17 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/fantasia-writer",
   },
   {
+    title: { zh: "Hire Lens", en: "Hire Lens" },
+    description: {
+      zh: "AI智能招聘辅助工具。",
+      en: "Hiring tool to help you find your dream job.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/092c50/FFFFFF?text=Hire%20Lens&font=roboto",
+    demoUrl: "https://hire.studioyyh.tech/",
+    githubUrl: "",
+  },
+  {
     title: { zh: "PRD精灵", en: "PRD Genie" },
     description: {
       zh: "帮你更好编写项目产品需求文档并建议技术栈。",

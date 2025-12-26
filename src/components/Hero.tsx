@@ -124,7 +124,7 @@ const Hero = () => {
 
           <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-10 animate-fade-in-up delay-200">
             <div className="group cursor-default">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-accent transition-colors duration-300">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-accent transition-colors duration-300 font-cute">
                 <span className="text-accent group-hover:text-primary transition-colors duration-300">
                   Y
                 </span>
@@ -133,7 +133,7 @@ const Hero = () => {
               <div className="h-1 w-0 group-hover:w-full bg-accent transition-all duration-300 rounded-full" />
             </div>
             <div className="group cursor-default">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-blue-500 transition-colors duration-300">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-blue-500 transition-colors duration-300 font-cute">
                 <span className="text-accent group-hover:text-primary transition-colors duration-300">
                   Y
                 </span>
@@ -142,7 +142,7 @@ const Hero = () => {
               <div className="h-1 w-0 group-hover:w-full bg-blue-500 transition-all duration-300 rounded-full" />
             </div>
             <div className="group cursor-default">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-purple-500 transition-colors duration-300">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-purple-500 transition-colors duration-300 font-cute">
                 <span className="text-accent group-hover:text-primary transition-colors duration-300">
                   H
                 </span>

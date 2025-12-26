@@ -225,6 +225,9 @@
   .hover-underline:hover::after {
     width: 100%;
   }
+  .font-cute {
+    font-family: "Fredoka", sans-serif;
+  }
 }
 
 @layer base {

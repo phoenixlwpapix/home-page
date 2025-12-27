@@ -15,7 +15,7 @@ export const projects: Project[] = [
       en: "AI-powered English reading skill platform",
     },
     imageUrl:
-      "https://placehold.co/600x400/33A9D8/FFFFFF?text=Cicada%20English&font=roboto",
+      "https://placehold.co/600x400/4F9DFF/FFFFFF?text=Cicada%20English&font=roboto",
     demoUrl: "https://cicada-english.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
   },
@@ -26,7 +26,7 @@ export const projects: Project[] = [
       en: "Your little smart buddy, ready to answer anytime.",
     },
     imageUrl:
-      "https://placehold.co/600x400/EEDD55/FFFFFF?text=Chat-O-Matic&font=roboto",
+      "https://placehold.co/600x400/6C63FF/FFFFFF?text=Chat-O-Matic&font=roboto",
     demoUrl: "https://chat.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/chat-o-matic",
   },
@@ -37,9 +37,31 @@ export const projects: Project[] = [
       en: "Intelligent Q&A system providing detailed answers and knowledge explanations.",
     },
     imageUrl:
-      "https://placehold.co/600x400/9333EA/FFFFFF?text=Sesame%20Explainer&font=roboto",
+      "https://placehold.co/600x400/FF9F1C/FFFFFF?text=Sesame%20Explainer&font=roboto",
     demoUrl: "https://sesame-explainer.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
+  },
+  {
+    title: { zh: "灵犀", en: "LingXi" },
+    description: {
+      zh: "一个智能员工关系助手",
+      en: "An intelligent employee relationship assistant",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/FFB703/FFFFFF?text=LingXi&font=roboto",
+    demoUrl: "https://lingxi.studioyyh.tech/",
+    githubUrl: "",
+  },
+  {
+    title: { zh: "Hire Lens", en: "Hire Lens" },
+    description: {
+      zh: "AI智能招聘辅助工具。",
+      en: "Hiring tool to help you find your dream job.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/4DD6B6/FFFFFF?text=Hire%20Lens&font=roboto",
+    demoUrl: "https://hire.studioyyh.tech/",
+    githubUrl: "",
   },
   {
     title: { zh: "Fantasia", en: "Fantasia" },
@@ -49,20 +71,9 @@ export const projects: Project[] = [
     },
 
     imageUrl:
-      "https://placehold.co/600x400/577B97/FFFFFF?text=Fantasia&font=roboto",
+      "https://placehold.co/600x400/FF8FAB/FFFFFF?text=Fantasia&font=roboto",
     demoUrl: "https://fantasia.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/fantasia-writer",
-  },
-  {
-    title: { zh: "Hire Lens", en: "Hire Lens" },
-    description: {
-      zh: "AI智能招聘辅助工具。",
-      en: "Hiring tool to help you find your dream job.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/092c50/FFFFFF?text=Hire%20Lens&font=roboto",
-    demoUrl: "https://hire.studioyyh.tech/",
-    githubUrl: "",
   },
   {
     title: { zh: "PRD精灵", en: "PRD Genie" },
@@ -71,21 +82,11 @@ export const projects: Project[] = [
       en: "Help you write better project product requirement documents and suggest tech stacks.",
     },
     imageUrl:
-      "https://placehold.co/600x400/FD6F60/FFFFFF?text=PRD%20Genie&font=roboto",
+      "https://placehold.co/600x400/5BC0EB/FFFFFF?text=PRD%20Genie&font=roboto",
     demoUrl: "https://prd-genie.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/prd-genie",
   },
-  {
-    title: { zh: "数理化工具箱", en: "Math Toolkit" },
-    description: {
-      zh: "帮你更好理解数学、物理、化学知识。",
-      en: "Help you better understand mathematics, physics, and chemistry.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/71A9F7/FFFFFF?text=Math%20Toolkit&font=roboto",
-    demoUrl: "https://math-toolkit.studioyyh.tech/",
-    githubUrl: "https://github.com/phoenixlwpapix/math-toolkit",
-  },
+
   {
     title: { zh: "Chez Liliane", en: "Chez Liliane" },
     description: {
@@ -93,7 +94,7 @@ export const projects: Project[] = [
       en: "A personal homepage for a baking enthusiast.",
     },
     imageUrl:
-      "https://placehold.co/600x400/f07491/FFFFFF?text=Chez%20Liliane&font=roboto",
+      "https://placehold.co/600x400/9B5DE5/FFFFFF?text=Chez%20Liliane&font=roboto",
     demoUrl: "https://bakery.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/phoenixlwpapix.github.io",
   },
@@ -104,7 +105,7 @@ export const projects: Project[] = [
       en: "Explore global cuisines through intelligent ingredient matching.",
     },
     imageUrl:
-      "https://placehold.co/600x400/FFA500/FFFFFF?text=Recipe%20Rover&font=roboto",
+      "https://placehold.co/600x400/2EC4B6/FFFFFF?text=Recipe%20Rover&font=roboto",
     demoUrl: "https://recipe-rover.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/recipe-rover",
   },

@@ -13,57 +13,57 @@ const Hero = () => {
   const hobbies =
     language === "zh"
       ? [
-          {
-            name: "跆拳道",
-            icon: "🥋",
-            color:
-              "bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400",
-          },
-          {
-            name: "网球",
-            icon: "🎾",
-            color:
-              "bg-lime-100 text-lime-600 dark:bg-lime-500/20 dark:text-lime-400",
-          },
-          {
-            name: "游泳",
-            icon: "🏊",
-            color:
-              "bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400",
-          },
-          {
-            name: "旅行",
-            icon: "✈️",
-            color:
-              "bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400",
-          },
-        ]
+        {
+          name: "跆拳道",
+          icon: "🥋",
+          color:
+            "bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400",
+        },
+        {
+          name: "网球",
+          icon: "🎾",
+          color:
+            "bg-lime-100 text-lime-600 dark:bg-lime-500/20 dark:text-lime-400",
+        },
+        {
+          name: "游泳",
+          icon: "🏊",
+          color:
+            "bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400",
+        },
+        {
+          name: "旅行",
+          icon: "✈️",
+          color:
+            "bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400",
+        },
+      ]
       : [
-          {
-            name: "Taekwondo",
-            icon: "🥋",
-            color:
-              "bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400",
-          },
-          {
-            name: "Tennis",
-            icon: "🎾",
-            color:
-              "bg-lime-100 text-lime-600 dark:bg-lime-500/20 dark:text-lime-400",
-          },
-          {
-            name: "Swimming",
-            icon: "🏊",
-            color:
-              "bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400",
-          },
-          {
-            name: "Travel",
-            icon: "✈️",
-            color:
-              "bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400",
-          },
-        ];
+        {
+          name: "Taekwondo",
+          icon: "🥋",
+          color:
+            "bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400",
+        },
+        {
+          name: "Tennis",
+          icon: "🎾",
+          color:
+            "bg-lime-100 text-lime-600 dark:bg-lime-500/20 dark:text-lime-400",
+        },
+        {
+          name: "Swimming",
+          icon: "🏊",
+          color:
+            "bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400",
+        },
+        {
+          name: "Travel",
+          icon: "✈️",
+          color:
+            "bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400",
+        },
+      ];
 
   return (
     <section
@@ -71,8 +71,8 @@ const Hero = () => {
       className="min-h-screen flex items-center justify-center bg-gradient-to-b from-secondary to-background dark:from-secondary/30 dark:to-background relative overflow-hidden"
     >
       {/* Background Decorative Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl animate-pulse delay-700" />
+      <div className="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl delay-700" />
 
       <Particles
         className="absolute inset-0"
@@ -88,7 +88,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold tracking-widest uppercase animate-fade-in">
+          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold tracking-widest uppercase">
             {language === "zh" ? "欢迎来到我的世界" : "Welcome to my world"}
           </div>
 
@@ -110,7 +110,7 @@ const Hero = () => {
               <div className="flex flex-col gap-4 sm:gap-6">
                 <div className="animate-slide-in-left">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-blue-500">
-                    YYH Aaron
+                    YYH · Aaron
                   </span>
                 </div>
                 <div className="animate-slide-in-right">
@@ -122,7 +122,7 @@ const Hero = () => {
             )}
           </h1>
 
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-10 animate-fade-in-up delay-200">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-10">
             <div className="group cursor-default">
               <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-accent transition-colors duration-300 font-cute">
                 <span className="text-accent group-hover:text-primary transition-colors duration-300">
@@ -153,7 +153,7 @@ const Hero = () => {
           </div>
 
           {/* Hobbies as Tags */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up delay-300">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {hobbies.map((hobby, index) => (
               <div
                 key={index}
@@ -166,7 +166,7 @@ const Hero = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center items-center space-x-8 mb-16 animate-fade-in-up delay-400">
+          <div className="flex justify-center items-center space-x-8 mb-16">
             <a
               href="https://github.com/phoenixlwpapix"
               target="_blank"
@@ -194,7 +194,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="flex flex-col items-center gap-2 animate-bounce">
+          <div className="flex flex-col items-center gap-2">
             <span className="text-xs font-bold tracking-widest text-primary/40 uppercase">
               {language === "zh" ? "向下探索" : "Scroll to explore"}
             </span>

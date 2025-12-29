@@ -26,7 +26,7 @@ export const projects: Project[] = [
       en: "Your little smart buddy, ready to answer anytime.",
     },
     imageUrl:
-      "https://placehold.co/600x400/6C63FF/FFFFFF?text=Chat-O-Matic&font=roboto",
+      "https://placehold.co/600x400/FF9F1C/FFFFFF?text=Chat-O-Matic&font=roboto",
     demoUrl: "https://chat.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/chat-o-matic",
   },
@@ -37,7 +37,7 @@ export const projects: Project[] = [
       en: "Intelligent Q&A system providing detailed answers and knowledge explanations.",
     },
     imageUrl:
-      "https://placehold.co/600x400/FF9F1C/FFFFFF?text=Sesame%20Explainer&font=roboto",
+      "https://placehold.co/600x400/2EC4B6/FFFFFF?text=Sesame%20Explainer&font=roboto",
     demoUrl: "https://sesame-explainer.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
   },
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     },
 
     imageUrl:
-      "https://placehold.co/600x400/FF8FAB/FFFFFF?text=Fantasia&font=roboto",
+      "https://placehold.co/600x400/9B5DE5/FFFFFF?text=Fantasia&font=roboto",
     demoUrl: "https://fantasia.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/fantasia-writer",
   },
@@ -94,7 +94,7 @@ export const projects: Project[] = [
       en: "A personal homepage for a baking enthusiast.",
     },
     imageUrl:
-      "https://placehold.co/600x400/9B5DE5/FFFFFF?text=Chez%20Liliane&font=roboto",
+      "https://placehold.co/600x400/FF8FAB/FFFFFF?text=Chez%20Liliane&font=roboto",
     demoUrl: "https://bakery.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/phoenixlwpapix.github.io",
   },
@@ -105,7 +105,7 @@ export const projects: Project[] = [
       en: "Explore global cuisines through intelligent ingredient matching.",
     },
     imageUrl:
-      "https://placehold.co/600x400/2EC4B6/FFFFFF?text=Recipe%20Rover&font=roboto",
+      "https://placehold.co/600x400/6C63FF/FFFFFF?text=Recipe%20Rover&font=roboto",
     demoUrl: "https://recipe-rover.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/recipe-rover",
   },

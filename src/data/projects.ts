@@ -76,15 +76,15 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/fantasia-writer",
   },
   {
-    title: { zh: "PRD精灵", en: "PRD Genie" },
+    title: { zh: "简面", en: "JianMian" },
     description: {
-      zh: "帮你更好编写项目产品需求文档并建议技术栈。",
-      en: "Help you write better project product requirement documents and suggest tech stacks.",
+      zh: "一个AI智能简历和面试助手",
+      en: "An AI intelligent resume and interview assistant",
     },
     imageUrl:
-      "https://placehold.co/600x400/5BC0EB/FFFFFF?text=PRD%20Genie&font=roboto",
-    demoUrl: "https://prd-genie.studioyyh.tech/",
-    githubUrl: "https://github.com/phoenixlwpapix/prd-genie",
+      "https://placehold.co/600x400/FF6B6B/FFFFFF?text=JianMian&font=roboto",
+    demoUrl: "https://jianmian.studioyyh.tech/",
+    githubUrl: "",
   },
 
   {

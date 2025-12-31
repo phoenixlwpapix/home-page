@@ -16,7 +16,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/4F9DFF/FFFFFF?text=Cicada%20English&font=roboto",
-    demoUrl: "https://cicada-english.studioyyh.tech/",
+    demoUrl: "https://cicada.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
   },
   {
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/2EC4B6/FFFFFF?text=Sesame%20Explainer&font=roboto",
-    demoUrl: "https://sesame-explainer.studioyyh.tech/",
+    demoUrl: "https://sesame.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
   },
   {
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/6C63FF/FFFFFF?text=Recipe%20Rover&font=roboto",
-    demoUrl: "https://recipe-rover.studioyyh.tech/",
+    demoUrl: "https://recipe.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/recipe-rover",
   },
 ];

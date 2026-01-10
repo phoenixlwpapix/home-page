@@ -102,7 +102,7 @@ const Hero = () => {
                 </div>
                 <div className="animate-slide-in-right">
                   <span className="text-primary dark:text-primary">
-                    个人主页
+                    未来已来
                   </span>
                 </div>
               </div>
@@ -115,7 +115,7 @@ const Hero = () => {
                 </div>
                 <div className="animate-slide-in-right">
                   <span className="text-primary dark:text-primary">
-                    Homepage
+                    The Future Is Here
                   </span>
                 </div>
               </div>

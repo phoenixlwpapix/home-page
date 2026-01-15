@@ -109,4 +109,37 @@ export const projects: Project[] = [
     demoUrl: "https://recipe.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/recipe-rover",
   },
+  {
+    title: { zh: "Task Master 3000", en: "Task Master 3000" },
+    description: {
+      zh: "Neo Brutalism风格的待办列表任务管理器。",
+      en: "Neo Brutalism style todo list task manager.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/DC143C/FFFFFF?text=Task%20Master%203000&font=roboto",
+    demoUrl: "https://todo.studioyyh.tech/",
+    githubUrl: "",
+  },
+  {
+    title: { zh: "Quote Master", en: "Quote Master" },
+    description: {
+      zh: "生成并管理报价单的项目。",
+      en: "A project for generating and managing quotes.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/228B22/FFFFFF?text=Quote%20Master&font=roboto",
+    demoUrl: "https://quote.studioyyh.tech/",
+    githubUrl: "",
+  },
+  {
+    title: { zh: "Snip Vault", en: "Snip Vault" },
+    description: {
+      zh: "保存常用代码片段的应用。",
+      en: "An app for saving commonly used code snippets.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/20B2AA/FFFFFF?text=Snip%20Vault&font=roboto",
+    demoUrl: "https://snip.studioyyh.tech/",
+    githubUrl: "",
+  },
 ];

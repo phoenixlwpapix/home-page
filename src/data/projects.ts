@@ -121,7 +121,7 @@ export const projects: Project[] = [
     githubUrl: "",
   },
   {
-    title: { zh: "Quote Master", en: "Quote Master" },
+    title: { zh: "报价大师", en: "Quote Master" },
     description: {
       zh: "生成并管理报价单的项目。",
       en: "A project for generating and managing quotes.",

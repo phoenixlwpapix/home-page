@@ -9,13 +9,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: { zh: "海豚英语", en: "Dolphin English" },
+    description: {
+      zh: "AI驱动的英语精读练习平台",
+      en: "AI-driven English reading practice platform",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/4CC9F0/FFFFFF?text=Dolphin%20English&font=roboto",
+    demoUrl: "https://dolphin.studioyyh.tech/",
+    githubUrl: "",
+  },
+  {
     title: { zh: "知了英语", en: "Cicada English" },
     description: {
       zh: "AI驱动的英语阅读训练平台",
       en: "AI-powered English reading skill platform",
     },
     imageUrl:
-      "https://placehold.co/600x400/4F9DFF/FFFFFF?text=Cicada%20English&font=roboto",
+      "https://placehold.co/600x400/4361EE/FFFFFF?text=Cicada%20English&font=roboto",
     demoUrl: "https://cicada.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
   },
@@ -26,7 +37,7 @@ export const projects: Project[] = [
       en: "Your little smart buddy, ready to answer anytime.",
     },
     imageUrl:
-      "https://placehold.co/600x400/FF9F1C/FFFFFF?text=Chat-O-Matic&font=roboto",
+      "https://placehold.co/600x400/F72585/FFFFFF?text=Chat-O-Matic&font=roboto",
     demoUrl: "https://chat.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/chat-o-matic",
   },
@@ -37,7 +48,7 @@ export const projects: Project[] = [
       en: "Intelligent Q&A system providing detailed answers and knowledge explanations.",
     },
     imageUrl:
-      "https://placehold.co/600x400/2EC4B6/FFFFFF?text=Sesame%20Explainer&font=roboto",
+      "https://placehold.co/600x400/4895EF/FFFFFF?text=Sesame%20Explainer&font=roboto",
     demoUrl: "https://sesame.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
   },
@@ -48,18 +59,18 @@ export const projects: Project[] = [
       en: "An intelligent employee relationship assistant",
     },
     imageUrl:
-      "https://placehold.co/600x400/FFB703/FFFFFF?text=LingXi&font=roboto",
+      "https://placehold.co/600x400/F77F00/FFFFFF?text=LingXi&font=roboto",
     demoUrl: "https://lingxi.studioyyh.tech/",
     githubUrl: "",
   },
   {
-    title: { zh: "Hire Lens", en: "Hire Lens" },
+    title: { zh: "聘才透镜", en: "Hire Lens" },
     description: {
       zh: "AI智能招聘辅助工具。",
       en: "Hiring tool to help you find your dream job.",
     },
     imageUrl:
-      "https://placehold.co/600x400/4DD6B6/FFFFFF?text=Hire%20Lens&font=roboto",
+      "https://placehold.co/600x400/7209B7/FFFFFF?text=Hire%20Lens&font=roboto",
     demoUrl: "https://hire.studioyyh.tech/",
     githubUrl: "",
   },
@@ -69,9 +80,8 @@ export const projects: Project[] = [
       zh: "AI驱动的智能写作助手",
       en: "AI-driven intelligent writing assistant",
     },
-
     imageUrl:
-      "https://placehold.co/600x400/9B5DE5/FFFFFF?text=Fantasia&font=roboto",
+      "https://placehold.co/600x400/8338EC/FFFFFF?text=Fantasia&font=roboto",
     demoUrl: "https://fantasia.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/fantasia-writer",
   },
@@ -82,11 +92,10 @@ export const projects: Project[] = [
       en: "An AI intelligent resume and interview assistant",
     },
     imageUrl:
-      "https://placehold.co/600x400/FF6B6B/FFFFFF?text=JianMian&font=roboto",
+      "https://placehold.co/600x400/FF006E/FFFFFF?text=JianMian&font=roboto",
     demoUrl: "https://jianmian.studioyyh.tech/",
     githubUrl: "",
   },
-
   {
     title: { zh: "Chez Liliane", en: "Chez Liliane" },
     description: {
@@ -94,7 +103,7 @@ export const projects: Project[] = [
       en: "A personal homepage for a baking enthusiast.",
     },
     imageUrl:
-      "https://placehold.co/600x400/FF8FAB/FFFFFF?text=Chez%20Liliane&font=roboto",
+      "https://placehold.co/600x400/FB5607/FFFFFF?text=Chez%20Liliane&font=roboto",
     demoUrl: "https://bakery.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/phoenixlwpapix.github.io",
   },
@@ -105,18 +114,18 @@ export const projects: Project[] = [
       en: "Explore global cuisines through intelligent ingredient matching.",
     },
     imageUrl:
-      "https://placehold.co/600x400/6C63FF/FFFFFF?text=Recipe%20Rover&font=roboto",
+      "https://placehold.co/600x400/FFBE0B/FFFFFF?text=Recipe%20Rover&font=roboto",
     demoUrl: "https://recipe.studioyyh.tech/",
     githubUrl: "https://github.com/phoenixlwpapix/recipe-rover",
   },
   {
-    title: { zh: "Task Master 3000", en: "Task Master 3000" },
+    title: { zh: "任务统御者3000", en: "Task Master 3000" },
     description: {
       zh: "Neo Brutalism风格的待办列表任务管理器。",
       en: "Neo Brutalism style todo list task manager.",
     },
     imageUrl:
-      "https://placehold.co/600x400/DC143C/FFFFFF?text=Task%20Master%203000&font=roboto",
+      "https://placehold.co/600x400/3F37C9/FFFFFF?text=Task%20Master%203000&font=roboto",
     demoUrl: "https://todo.studioyyh.tech/",
     githubUrl: "",
   },
@@ -127,18 +136,18 @@ export const projects: Project[] = [
       en: "A project for generating and managing quotes.",
     },
     imageUrl:
-      "https://placehold.co/600x400/228B22/FFFFFF?text=Quote%20Master&font=roboto",
+      "https://placehold.co/600x400/10B981/FFFFFF?text=Quote%20Master&font=roboto",
     demoUrl: "https://quote.studioyyh.tech/",
     githubUrl: "",
   },
   {
-    title: { zh: "Snip Vault", en: "Snip Vault" },
+    title: { zh: "代码金库", en: "Snip Vault" },
     description: {
       zh: "保存常用代码片段的应用。",
       en: "An app for saving commonly used code snippets.",
     },
     imageUrl:
-      "https://placehold.co/600x400/20B2AA/FFFFFF?text=Snip%20Vault&font=roboto",
+      "https://placehold.co/600x400/06D6A0/FFFFFF?text=Snip%20Vault&font=roboto",
     demoUrl: "https://snip.studioyyh.tech/",
     githubUrl: "",
   },

@@ -1,10 +1,10 @@
 // src/components/Hero.tsx
 import React from "react";
-import { SiGithub, SiLinkedin } from "react-icons/si";
-import { FaEnvelope, FaChevronDown } from "react-icons/fa";
+import { SiGithub } from "react-icons/si";
+import { FaEnvelope, FaChevronDown, FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "../hooks/useLanguage";
 import { useTheme } from "../hooks/useTheme";
-import { Particles } from "./ui/particles";
+import BinaryGlobe from "./ui/binary-globe";
 
 const Hero = () => {
   const { language } = useLanguage();
@@ -74,16 +74,7 @@ const Hero = () => {
       <div className="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl delay-700" />
 
-      <Particles
-        className="absolute inset-0"
-        quantity={120}
-        staticity={30}
-        ease={40}
-        size={0.6}
-        color={isDark ? "#33A9D8" : "#000000"}
-        vx={0.1}
-        vy={0.1}
-      />
+      <BinaryGlobe isDark={isDark} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -182,7 +173,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="group relative p-4 bg-white dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/20 transition-all duration-300 hover:-translate-y-2 border border-transparent dark:border-white/5"
             >
-              <SiLinkedin className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
+              <FaLinkedin className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
               <span className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full scale-0 group-hover:scale-100 transition-transform" />
             </a>
             <a

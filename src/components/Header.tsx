@@ -62,6 +62,14 @@ const Header = memo(() => {
             >
               {language === "zh" ? "足迹" : "Footprints"}
             </a>
+            <a
+              href="https://studioyyh-blog.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm sm:text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
+            >
+              {language === "zh" ? "博客" : "Blog"}
+            </a>
           </nav>
           {/* Language Toggle */}
           {languageMounted && (

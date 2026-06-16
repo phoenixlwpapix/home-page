@@ -151,4 +151,15 @@ export const projects: Project[] = [
     demoUrl: "https://snip.studioyyh.tech/",
     githubUrl: "",
   },
+  {
+    title: { zh: "Vocably", en: "Vocably" },
+    description: {
+      zh: "小学英语单词学练系统，拼写练习与语境填空双模式。",
+      en: "Elementary English vocabulary learning system with spelling and context-fill exercises.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/6366F1/FFFFFF?text=Vocably&font=roboto",
+    demoUrl: "https://vocab.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/vocably",
+  },
 ];

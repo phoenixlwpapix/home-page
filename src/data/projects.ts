@@ -42,6 +42,17 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/chat-o-matic",
   },
   {
+    title: { zh: "Vocably", en: "Vocably" },
+    description: {
+      zh: "小学英语单词学练系统，拼写练习与语境填空双模式。",
+      en: "Elementary English vocabulary learning system with spelling and context-fill exercises.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/6366F1/FFFFFF?text=Vocably&font=roboto",
+    demoUrl: "https://vocab.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/vocably",
+  },
+  {
     title: { zh: "芝麻问答", en: "Sesame Explainer" },
     description: {
       zh: "智能问答系统，提供详细解答和知识解释。",
@@ -150,16 +161,5 @@ export const projects: Project[] = [
       "https://placehold.co/600x400/06D6A0/FFFFFF?text=Snip%20Vault&font=roboto",
     demoUrl: "https://snip.studioyyh.tech/",
     githubUrl: "",
-  },
-  {
-    title: { zh: "Vocably", en: "Vocably" },
-    description: {
-      zh: "小学英语单词学练系统，拼写练习与语境填空双模式。",
-      en: "Elementary English vocabulary learning system with spelling and context-fill exercises.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/6366F1/FFFFFF?text=Vocably&font=roboto",
-    demoUrl: "https://vocab.studioyyh.tech/",
-    githubUrl: "https://github.com/phoenixlwpapix/vocably",
   },
 ];

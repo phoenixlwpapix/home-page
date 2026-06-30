@@ -53,6 +53,17 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/vocably",
   },
   {
+    title: { zh: "Conjugo", en: "Conjugo" },
+    description: {
+      zh: "西班牙语动词变位练习应用，支持时态、主语与即时反馈训练。",
+      en: "Spanish verb conjugation practice app with tense, subject, and instant feedback drills.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/14B8A6/FFFFFF?text=Conjugo&font=roboto",
+    demoUrl: "https://conjugo.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/conjugo",
+  },
+  {
     title: { zh: "芝麻问答", en: "Sesame Explainer" },
     description: {
       zh: "智能问答系统，提供详细解答和知识解释。",

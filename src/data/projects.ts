@@ -20,15 +20,15 @@ export const projects: Project[] = [
     githubUrl: "",
   },
   {
-    title: { zh: "知了英语", en: "Cicada English" },
+    title: { zh: "ConjuGO", en: "ConjuGO" },
     description: {
-      zh: "AI驱动的英语阅读训练平台",
-      en: "AI-powered English reading skill platform",
+      zh: "四种语言动词变位练习应用，支持时态、主语与即时反馈训练。",
+      en: "Four-language verb conjugation practice app with tense, subject, and instant feedback drills.",
     },
     imageUrl:
-      "https://placehold.co/600x400/4361EE/FFFFFF?text=Cicada%20English&font=roboto",
-    demoUrl: "https://cicada.studioyyh.tech/",
-    githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
+      "https://placehold.co/600x400/14B8A6/FFFFFF?text=ConjuGO&font=roboto",
+    demoUrl: "https://conjugo.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/conjugo",
   },
   {
     title: { zh: "聊聊机", en: "Chat-O-Matic" },
@@ -53,15 +53,15 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/vocably",
   },
   {
-    title: { zh: "Conjugo", en: "Conjugo" },
+    title: { zh: "知了英语", en: "Cicada English" },
     description: {
-      zh: "西班牙语动词变位练习应用，支持时态、主语与即时反馈训练。",
-      en: "Spanish verb conjugation practice app with tense, subject, and instant feedback drills.",
+      zh: "AI驱动的英语阅读训练平台",
+      en: "AI-powered English reading skill platform",
     },
     imageUrl:
-      "https://placehold.co/600x400/14B8A6/FFFFFF?text=Conjugo&font=roboto",
-    demoUrl: "https://conjugo.studioyyh.tech/",
-    githubUrl: "https://github.com/phoenixlwpapix/conjugo",
+      "https://placehold.co/600x400/4361EE/FFFFFF?text=Cicada%20English&font=roboto",
+    demoUrl: "https://cicada.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
   },
   {
     title: { zh: "芝麻问答", en: "Sesame Explainer" },

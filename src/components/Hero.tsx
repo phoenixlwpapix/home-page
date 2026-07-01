@@ -5,6 +5,9 @@ import { FaEnvelope, FaChevronDown, FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "../hooks/useLanguage";
 import { useTheme } from "../hooks/useTheme";
 import BinaryGlobe from "./ui/binary-globe";
+import WavyBackground from "./ui/wavy-background";
+
+const DARK_WAVE_COLORS = ["#38bdf8", "#22d3ee", "#818cf8", "#f472b6"];
 
 const Hero = () => {
   const { language } = useLanguage();
@@ -70,11 +73,28 @@ const Hero = () => {
       id="about"
       className="min-h-screen flex items-center justify-center bg-gradient-to-b from-secondary to-background dark:from-secondary/30 dark:to-background relative overflow-hidden"
     >
-      {/* Background Decorative Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl delay-700" />
-
-      <BinaryGlobe isDark={isDark} />
+      {isDark ? (
+        <div className="absolute inset-0 pointer-events-none">
+          <WavyBackground
+            colors={DARK_WAVE_COLORS}
+            waveWidth={64}
+            backgroundFill="#05070d"
+            blur={14}
+            speed="fast"
+            waveOpacity={0.68}
+            containerClassName="opacity-95"
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,transparent_0%,rgba(0,0,0,0.08)_24%,rgba(0,0,0,0.72)_78%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background/70" />
+        </div>
+      ) : (
+        <>
+          {/* Background Decorative Elements */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl delay-700" />
+          <BinaryGlobe isDark={isDark} />
+        </>
+      )}
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

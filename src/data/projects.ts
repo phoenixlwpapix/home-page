@@ -15,7 +15,7 @@ export const projects: Project[] = [
       en: "A quiet multilingual vocabulary notebook for English, French, Spanish, and Japanese.",
     },
     imageUrl:
-      "https://placehold.co/600x400/5B6B82/FFFFFF?text=Voce&font=roboto",
+      "https://placehold.co/600x400/E63946/FFFFFF?text=Voce&font=roboto",
     demoUrl: "https://voce.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/voce",
   },

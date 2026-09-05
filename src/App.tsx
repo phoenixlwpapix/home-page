@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Showcase from "./components/Showcase";
 import Footprints from "./components/Footprints";
-import InDevelopment from "./components/InDevelopment";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -18,7 +17,6 @@ export default function App() {
           <main className="overflow-x-hidden">
             <Hero />
             <Showcase />
-            <InDevelopment />
             <Footprints />
           </main>
           <Footer />

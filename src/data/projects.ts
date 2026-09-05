@@ -16,7 +16,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/5B6B82/FFFFFF?text=Voce&font=roboto",
-    demoUrl: "https://voce.studioyyh.tech/",
+    demoUrl: "https://voce.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/voce",
   },
   {
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/4CC9F0/FFFFFF?text=Dolphin%20English&font=roboto",
-    demoUrl: "https://dolphin.studioyyh.tech/",
+    demoUrl: "https://dolphin.studioyyh.com/",
     githubUrl: "",
   },
   {
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/14B8A6/FFFFFF?text=ConjuGO&font=roboto",
-    demoUrl: "https://conjugo.studioyyh.tech/",
+    demoUrl: "https://conjugo.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/conjugo",
   },
   {
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/F72585/FFFFFF?text=Chat-O-Matic&font=roboto",
-    demoUrl: "https://chat.studioyyh.tech/",
+    demoUrl: "https://chat.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/chat-o-matic",
   },
   {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/6366F1/FFFFFF?text=Vocably&font=roboto",
-    demoUrl: "https://vocab.studioyyh.tech/",
+    demoUrl: "https://vocab.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/vocably",
   },
   {
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/4361EE/FFFFFF?text=Cicada%20English&font=roboto",
-    demoUrl: "https://cicada.studioyyh.tech/",
+    demoUrl: "https://cicada.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
   },
   {
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/4895EF/FFFFFF?text=Sesame%20Explainer&font=roboto",
-    demoUrl: "https://sesame.studioyyh.tech/",
+    demoUrl: "https://sesame.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
   },
   {
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/F77F00/FFFFFF?text=LingXi&font=roboto",
-    demoUrl: "https://lingxi.studioyyh.tech/",
+    demoUrl: "https://lingxi.studioyyh.com/",
     githubUrl: "",
   },
   {
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/7209B7/FFFFFF?text=Hire%20Lens&font=roboto",
-    demoUrl: "https://hire.studioyyh.tech/",
+    demoUrl: "https://hire.studioyyh.com/",
     githubUrl: "",
   },
   {
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/8338EC/FFFFFF?text=Fantasia&font=roboto",
-    demoUrl: "https://fantasia.studioyyh.tech/",
+    demoUrl: "https://fantasia.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/fantasia-writer",
   },
   {
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/FF006E/FFFFFF?text=JianMian&font=roboto",
-    demoUrl: "https://jianmian.studioyyh.tech/",
+    demoUrl: "https://jianmian.studioyyh.com/",
     githubUrl: "",
   },
   {
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/FB5607/FFFFFF?text=Chez%20Liliane&font=roboto",
-    demoUrl: "https://bakery.studioyyh.tech/",
+    demoUrl: "https://bakery.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/phoenixlwpapix.github.io",
   },
   {
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/FFBE0B/FFFFFF?text=Recipe%20Rover&font=roboto",
-    demoUrl: "https://recipe.studioyyh.tech/",
+    demoUrl: "https://recipe.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/recipe-rover",
   },
   {
@@ -159,7 +159,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/3F37C9/FFFFFF?text=Task%20Master%203000&font=roboto",
-    demoUrl: "https://todo.studioyyh.tech/",
+    demoUrl: "https://todo.studioyyh.com/",
     githubUrl: "",
   },
   {
@@ -170,7 +170,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/10B981/FFFFFF?text=Quote%20Master&font=roboto",
-    demoUrl: "https://quote.studioyyh.tech/",
+    demoUrl: "https://quote.studioyyh.com/",
     githubUrl: "",
   },
   {
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     },
     imageUrl:
       "https://placehold.co/600x400/06D6A0/FFFFFF?text=Snip%20Vault&font=roboto",
-    demoUrl: "https://snip.studioyyh.tech/",
+    demoUrl: "https://snip.studioyyh.com/",
     githubUrl: "",
   },
 ];

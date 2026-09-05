@@ -9,6 +9,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: { zh: "Voce", en: "Voce" },
+    description: {
+      zh: "沉浸式多语言个人词汇笔记本，支持英、法、西、日生词积累与智能复习。",
+      en: "A quiet multilingual vocabulary notebook for English, French, Spanish, and Japanese.",
+    },
+    imageUrl:
+      "https://placehold.co/600x400/5B6B82/FFFFFF?text=Voce&font=roboto",
+    demoUrl: "https://voce.studioyyh.tech/",
+    githubUrl: "https://github.com/phoenixlwpapix/voce",
+  },
+  {
     title: { zh: "海豚英语", en: "Dolphin English" },
     description: {
       zh: "AI驱动的英语精读练习平台",

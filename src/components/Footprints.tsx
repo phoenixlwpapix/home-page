@@ -1,6 +1,7 @@
 // src/components/Footprints.tsx
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import { Calendar } from "lucide-react";
 import { footprints } from "../data/footprints";
 import type { Footprint } from "../data/footprints";
 import { useLanguage } from "../hooks/useLanguage";
@@ -13,7 +14,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
   title,
   description,
   imageUrl,
-  location,
+  date,
   language,
 }) => {
   return (
@@ -24,12 +25,15 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
         className="w-full aspect-[3/4] object-cover"
       />
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-primary dark:text-primary">
+        <h3 className="text-xl font-bold mb-1.5 text-primary dark:text-primary">
           {title[language]}
         </h3>
-        <p className="text-sm text-primary/60 dark:text-primary/60 mb-2">
-          {location[language]}
-        </p>
+        {date && (
+          <p className="text-sm text-primary/60 dark:text-primary/60 mb-2.5 flex items-center gap-1.5 font-medium">
+            <Calendar size={14} className="text-primary/40 dark:text-primary/40" />
+            <span>{date}</span>
+          </p>
+        )}
         <p className="text-primary/70 dark:text-primary/70">
           {description[language]}
         </p>

@@ -4,6 +4,7 @@ export interface Footprint {
   description: { zh: string; en: string };
   imageUrl: string;
   location: { zh: string; en: string };
+  date: string;
 }
 
 export const footprints: Footprint[] = [
@@ -15,42 +16,27 @@ export const footprints: Footprint[] = [
     },
     imageUrl: "/images/footprints/fujian_wuyishan.webp",
     location: { zh: "武夷山, 福建", en: "Wuyishan, Fujian" },
+    date: "2026.05.02",
   },
   {
-    title: { zh: "巴厘岛 Ayana Resort", en: "Bali Ayana Resort" },
+    title: { zh: "瑞士 因特拉肯", en: "Switzerland Interlaken" },
     description: {
-      zh: "热带度假村的宁静与奢华",
-      en: "Tranquility and luxury of a tropical resort",
+      zh: "阿尔卑斯山脚下的湖光山色",
+      en: "Lake and mountain scenery at the foot of the Alps",
     },
-    imageUrl: "/images/footprints/bali_ayana.webp",
-    location: { zh: "巴厘岛, 印尼", en: "Bali, Indonesia" },
+    imageUrl: "/images/footprints/switzerland_interlaken.webp",
+    location: { zh: "因特拉肯, 瑞士", en: "Interlaken, Switzerland" },
+    date: "2025.08.12",
   },
   {
-    title: { zh: "巴厘岛 乌布", en: "Bali Ubud" },
+    title: { zh: "瑞士 少女峰", en: "Switzerland Jungfrau" },
     description: {
-      zh: "艺术之岛的稻田与寺庙",
-      en: "Rice fields and temples of the art island",
+      zh: "欧洲之巅的冰川与雪山",
+      en: "Glaciers and snow mountains at the top of Europe",
     },
-    imageUrl: "/images/footprints/bali_ubud.webp",
-    location: { zh: "乌布, 巴厘岛", en: "Ubud, Bali" },
-  },
-  {
-    title: { zh: "巴厘岛 乌鲁瓦图", en: "Bali Uluwatu" },
-    description: {
-      zh: "悬崖边的日落与海浪",
-      en: "Sunset and waves by the cliff",
-    },
-    imageUrl: "/images/footprints/bali_uluwatu.webp",
-    location: { zh: "乌鲁瓦图, 巴厘岛", en: "Uluwatu, Bali" },
-  },
-  {
-    title: { zh: "巴黎 迪士尼乐园", en: "Paris Disneyland" },
-    description: {
-      zh: "童话世界的魔法与欢乐",
-      en: "Magic and joy of a fairy tale world",
-    },
-    imageUrl: "/images/footprints/paris_disneyland.webp",
-    location: { zh: "巴黎, 法国", en: "Paris, France" },
+    imageUrl: "/images/footprints/switzerland_jungfrau.webp",
+    location: { zh: "少女峰, 瑞士", en: "Jungfrau, Switzerland" },
+    date: "2025.08.12",
   },
   {
     title: { zh: "巴黎 埃菲尔铁塔", en: "Paris Eiffel Tower" },
@@ -60,6 +46,57 @@ export const footprints: Footprint[] = [
     },
     imageUrl: "/images/footprints/paris_eiffel_tower.webp",
     location: { zh: "巴黎, 法国", en: "Paris, France" },
+    date: "2025.08.09",
+  },
+  {
+    title: { zh: "巴黎 迪士尼乐园", en: "Paris Disneyland" },
+    description: {
+      zh: "童话世界的魔法与欢乐",
+      en: "Magic and joy of a fairy tale world",
+    },
+    imageUrl: "/images/footprints/paris_disneyland.webp",
+    location: { zh: "巴黎, 法国", en: "Paris, France" },
+    date: "2025.08.08",
+  },
+  {
+    title: { zh: "北京 网球场", en: "Beijing Tennis Court" },
+    description: {
+      zh: "现代都市的运动与活力",
+      en: "Sports and vitality of the modern city",
+    },
+    imageUrl: "/images/footprints/pekin_tennis.webp",
+    location: { zh: "北京, 中国", en: "Beijing, China" },
+    date: "2025.05.18",
+  },
+  {
+    title: { zh: "越南 芽庄", en: "Vietnam Nha Trang" },
+    description: {
+      zh: "南海之滨的美丽海滩",
+      en: "Beautiful beaches by the South China Sea",
+    },
+    imageUrl: "/images/footprints/vietnam_Nha_Trang.webp",
+    location: { zh: "芽庄, 越南", en: "Nha Trang, Vietnam" },
+    date: "2025.01.18",
+  },
+  {
+    title: { zh: "北京 跆拳道馆", en: "Beijing Taekwondo Hall" },
+    description: {
+      zh: "武术之都的传统与现代",
+      en: "Tradition and modernity of the martial arts capital",
+    },
+    imageUrl: "/images/footprints/pekin_taekwongdo.webp",
+    location: { zh: "北京, 中国", en: "Beijing, China" },
+    date: "2024.08.24",
+  },
+  {
+    title: { zh: "巴厘岛 Ayana Resort", en: "Bali Ayana Resort" },
+    description: {
+      zh: "热带度假村的宁静与奢华",
+      en: "Tranquility and luxury of a tropical resort",
+    },
+    imageUrl: "/images/footprints/bali_ayana.webp",
+    location: { zh: "巴厘岛, 印尼", en: "Bali, Indonesia" },
+    date: "2024.07.20",
   },
   {
     title: { zh: "马尔代夫 Faarufushi岛", en: "Maldives Faarufushi Island" },
@@ -72,51 +109,17 @@ export const footprints: Footprint[] = [
       zh: "Faarufushi岛, 马尔代夫",
       en: "Faarufushi Island, Maldives",
     },
+    date: "2024.01.23",
   },
   {
-    title: { zh: "瑞士 因特拉肯", en: "Switzerland Interlaken" },
+    title: { zh: "巴厘岛 乌鲁瓦图", en: "Bali Uluwatu" },
     description: {
-      zh: "阿尔卑斯山脚下的湖光山色",
-      en: "Lake and mountain scenery at the foot of the Alps",
+      zh: "悬崖边的日落与海浪",
+      en: "Sunset and waves by the cliff",
     },
-    imageUrl: "/images/footprints/switzerland_interlaken.webp",
-    location: { zh: "因特拉肯, 瑞士", en: "Interlaken, Switzerland" },
-  },
-  {
-    title: { zh: "瑞士 少女峰", en: "Switzerland Jungfrau" },
-    description: {
-      zh: "欧洲之巅的冰川与雪山",
-      en: "Glaciers and snow mountains at the top of Europe",
-    },
-    imageUrl: "/images/footprints/switzerland_jungfrau.webp",
-    location: { zh: "少女峰, 瑞士", en: "Jungfrau, Switzerland" },
-  },
-  {
-    title: { zh: "北京 网球场", en: "Beijing Tennis Court" },
-    description: {
-      zh: "现代都市的运动与活力",
-      en: "Sports and vitality of the modern city",
-    },
-    imageUrl: "/images/footprints/pekin_tennis.webp",
-    location: { zh: "北京, 中国", en: "Beijing, China" },
-  },
-  {
-    title: { zh: "北京 跆拳道馆", en: "Beijing Taekwondo Hall" },
-    description: {
-      zh: "武术之都的传统与现代",
-      en: "Tradition and modernity of the martial arts capital",
-    },
-    imageUrl: "/images/footprints/pekin_taekwongdo.webp",
-    location: { zh: "北京, 中国", en: "Beijing, China" },
-  },
-  {
-    title: { zh: "越南 芽庄", en: "Vietnam Nha Trang" },
-    description: {
-      zh: "南海之滨的美丽海滩",
-      en: "Beautiful beaches by the South China Sea",
-    },
-    imageUrl: "/images/footprints/vietnam_Nha_Trang.webp",
-    location: { zh: "芽庄, 越南", en: "Nha Trang, Vietnam" },
+    imageUrl: "/images/footprints/bali_uluwatu.webp",
+    location: { zh: "乌鲁瓦图, 巴厘岛", en: "Uluwatu, Bali" },
+    date: "2023.07.24",
   },
   {
     title: { zh: "巴厘岛 仓古", en: "Bali Canggu" },
@@ -126,5 +129,16 @@ export const footprints: Footprint[] = [
     },
     imageUrl: "/images/footprints/bali_canggu.webp",
     location: { zh: "仓古, 巴厘岛", en: "Canggu, Bali" },
+    date: "2023.07.21",
+  },
+  {
+    title: { zh: "巴厘岛 乌布", en: "Bali Ubud" },
+    description: {
+      zh: "艺术之岛的稻田与寺庙",
+      en: "Rice fields and temples of the art island",
+    },
+    imageUrl: "/images/footprints/bali_ubud.webp",
+    location: { zh: "乌布, 巴厘岛", en: "Ubud, Bali" },
+    date: "2023.07.20",
   },
 ];

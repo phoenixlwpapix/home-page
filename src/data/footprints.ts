@@ -8,6 +8,15 @@ export interface Footprint {
 
 export const footprints: Footprint[] = [
   {
+    title: { zh: "福建 武夷山", en: "Wuyi Mountains, Fujian" },
+    description: {
+      zh: "漫步茶山翠谷，享受山野间的惬意时光",
+      en: "A relaxing stroll through lush tea hills and mountain peaks",
+    },
+    imageUrl: "/images/footprints/fujian_wuyishan.webp",
+    location: { zh: "武夷山, 福建", en: "Wuyishan, Fujian" },
+  },
+  {
     title: { zh: "巴厘岛 Ayana Resort", en: "Bali Ayana Resort" },
     description: {
       zh: "热带度假村的宁静与奢华",

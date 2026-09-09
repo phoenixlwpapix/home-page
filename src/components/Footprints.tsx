@@ -1,11 +1,14 @@
-import { useCallback, useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, MapPin, Maximize2 } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import "photoswipe/style.css";
 import { footprints } from "../data/footprints";
 import { useLanguage } from "../hooks/useLanguage";
 
 export default function Footprints() {
   const { language } = useLanguage();
+  const galleryRef = useRef<HTMLDivElement>(null);
   const [emblaRef, api] = useEmblaCarousel({
     align: "start",
     containScroll: "trimSnaps",
@@ -32,6 +35,65 @@ export default function Footprints() {
     };
   }, [api, update]);
   const zh = language === "zh";
+  useEffect(() => {
+    if (!galleryRef.current || !api) return;
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: galleryRef.current,
+      children: "a.photo-frame",
+      pswpModule: () => import("photoswipe"),
+      mainClass: "footprints-lightbox",
+      bgOpacity: 0.96,
+      paddingFn: (viewport) => ({
+        top: 60,
+        bottom: 90,
+        left: viewport.x < 700 ? 12 : 70,
+        right: viewport.x < 700 ? 12 : 70,
+      }),
+      closeTitle: zh ? "关闭（Esc）" : "Close (Esc)",
+      zoomTitle: zh ? "放大 / 缩小" : "Zoom in / out",
+      arrowPrevTitle: zh ? "上一张照片" : "Previous photo",
+      arrowNextTitle: zh ? "下一张照片" : "Next photo",
+      errorMsg: zh
+        ? "照片暂时无法加载，请关闭后重试。"
+        : "The photo could not be loaded. Please close and try again.",
+      indexIndicatorSep: " / ",
+    });
+    // Embla suppresses clicks after a drag; don't interpret them as photo opens.
+    lightbox.addFilter("clickedIndex", (index, event) =>
+      event.defaultPrevented ? -1 : index,
+    );
+    lightbox.on("beforeOpen", () => {
+      const reduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      const options = lightbox.pswp?.options;
+      if (options) {
+        options.showAnimationDuration = reduced ? 0 : 280;
+        options.hideAnimationDuration = reduced ? 0 : 220;
+        options.zoomAnimationDuration = reduced ? 0 : 250;
+      }
+    });
+    lightbox.on("uiRegister", () => {
+      lightbox.pswp?.ui?.registerElement({
+        name: "photo-caption",
+        appendTo: "root",
+        onInit: (element, pswp) => {
+          element.setAttribute("aria-live", "polite");
+          element.setAttribute("aria-atomic", "true");
+          const updateCaption = () => {
+            const photo = footprints[pswp.currIndex];
+            element.textContent = photo
+              ? `${photo.title[language]} · ${photo.date}\n${photo.description[language]}`
+              : "";
+          };
+          pswp.on("change", updateCaption);
+          updateCaption();
+        },
+      });
+    });
+    lightbox.init();
+    return () => lightbox.destroy();
+  }, [api, language, zh]);
   return (
     <section id="footprints" className="life-section">
       <div className="page-shell">
@@ -79,7 +141,7 @@ export default function Footprints() {
           aria-roledescription="carousel"
           aria-label={zh ? "旅行与生活照片" : "Travel and life photographs"}
         >
-          <div className="photo-track">
+          <div className="photo-track" ref={galleryRef}>
             {footprints.map((photo, index) => (
               <figure
                 className="photo-slide"
@@ -87,15 +149,32 @@ export default function Footprints() {
                 role="group"
                 aria-label={`${index + 1} / ${footprints.length}`}
               >
-                <div className="photo-frame">
+                <a
+                  className="photo-frame"
+                  href={photo.imageUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-pswp-width={photo.width}
+                  data-pswp-height={photo.height}
+                  data-cropped="true"
+                  aria-label={
+                    zh
+                      ? `全屏查看：${photo.title.zh}`
+                      : `View full size: ${photo.title.en}`
+                  }
+                >
                   <img
                     src={photo.imageUrl}
                     alt={`${photo.title[language]} — ${photo.description[language]}`}
-                    width="600"
-                    height="800"
+                    width={photo.width}
+                    height={photo.height}
                     loading="lazy"
+                    draggable={false}
                   />
-                </div>
+                  <span className="photo-expand" aria-hidden="true">
+                    <Maximize2 size={16} />
+                  </span>
+                </a>
                 <figcaption>
                   <span className="photo-date">{photo.date}</span>
                   <h3>{photo.title[language]}</h3>
@@ -119,7 +198,9 @@ export default function Footprints() {
             </span>
           </span>
           <span className="photo-drag-note">
-            {zh ? "慢慢走，慢慢看。" : "TAKE YOUR TIME. LOOK AROUND."}
+            {zh
+              ? "慢慢走，慢慢看。点击照片放大。"
+              : "TAKE YOUR TIME. CLICK A PHOTO TO EXPLORE."}
           </span>
           <div>
             <button

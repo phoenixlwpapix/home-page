@@ -1255,3 +1255,77 @@ svg {
     margin-left: 0;
   }
 }
+
+/* PhotoSwipe stays independent of the horizontal photo strip. */
+a.photo-frame {
+  position: relative;
+  display: block;
+  cursor: zoom-in;
+}
+a.photo-frame:focus-visible {
+  outline-offset: -4px;
+}
+.photo-expand {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #191b1780;
+  opacity: 0;
+  translate: 0 4px;
+  transition:
+    opacity 0.25s,
+    translate 0.25s;
+}
+a.photo-frame:hover .photo-expand,
+a.photo-frame:focus-visible .photo-expand {
+  opacity: 1;
+  translate: 0 0;
+}
+.pswp.footprints-lightbox {
+  --pswp-bg: #141611;
+  --pswp-icon-color: #f5f3ee;
+  --pswp-icon-color-secondary: #141611;
+  --pswp-icon-stroke-color: #141611;
+  --pswp-icon-stroke-width: 1px;
+}
+.footprints-lightbox .pswp__photo-caption {
+  position: absolute;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  left: 24px;
+  right: 24px;
+  color: #eeeae0;
+  white-space: pre-line;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.9;
+  pointer-events: none;
+  width: fit-content;
+  max-width: calc(100% - 48px);
+  margin-inline: auto;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: #141611cc;
+}
+.footprints-lightbox .pswp__button:focus-visible {
+  outline: 2px solid #f18465;
+  outline-offset: -5px;
+}
+@media (hover: none) {
+  .photo-expand {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@media (max-width: 700px) {
+  .footprints-lightbox .pswp__photo-caption {
+    font-size: 11px;
+    left: 16px;
+    right: 16px;
+  }
+}

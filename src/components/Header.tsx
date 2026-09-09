@@ -1,110 +1,92 @@
-// src/components/Header.tsx
-import React, { useState, useEffect, memo } from "react";
-import { Sun, Moon, Languages } from "lucide-react";
-import { useTheme } from "../hooks/useTheme";
+import { useEffect, useState } from "react";
+import { ArrowUpRight, Moon, Sun } from "lucide-react";
 import { useLanguage } from "../hooks/useLanguage";
-import { THEME_STYLES, getThemeToggleStyles } from "../constants/styles";
+import { useTheme } from "../hooks/useTheme";
 
-const Header = memo(() => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { isDark, toggleTheme, mounted } = useTheme();
-  const { language, toggleLanguage, mounted: languageMounted } = useLanguage();
-
+export default function Header() {
+  const { language, toggleLanguage } = useLanguage();
+  const { isDark, toggleTheme } = useTheme();
+  const [active, setActive] = useState("about");
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+    const update = () => {
+      setScrolled(window.scrollY > 24);
+      for (const id of ["footprints", "works", "about"]) {
+        const section = document.getElementById(id);
+        if (
+          section &&
+          section.getBoundingClientRect().top <= window.innerHeight * 0.4
+        ) {
+          setActive(id);
+          break;
+        }
+      }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
   }, []);
-
-  // Get theme toggle styles
-  const buttonBackground = isDark
-    ? THEME_STYLES.buttonBackground.dark
-    : THEME_STYLES.buttonBackground.light;
-
-  const { sliderClass, sunClass, moonClass } = getThemeToggleStyles(isDark);
-
+  const zh = language === "zh";
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 dark:bg-background/80 backdrop-blur-sm shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 sm:px-24 py-4 flex justify-between items-center max-w-full overflow-hidden">
-        <a
-          href="#home"
-          className="flex items-center space-x-2 text-lg sm:text-xl font-bold tracking-wider text-primary dark:text-primary whitespace-nowrap"
-        >
-          {/* SVG Logo from public folder */}
-          <img src="/favicon.svg" alt="Studio YYH Logo" className="w-6 h-6" />
-          <span className="hidden sm:inline">STUDIO YYH.</span>
+    <header className={scrolled ? "site-header is-scrolled" : "site-header"}>
+      <div className="page-shell header-inner">
+        <a className="wordmark" href="#about" aria-label="Studio YYH home">
+          STUDIO YYH<span>.</span>
         </a>
-        <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-6 lg:space-x-8">
-          <nav className="flex space-x-2 sm:space-x-3 md:space-x-6 lg:space-x-8 whitespace-nowrap">
-            <a
-              href="#about"
-              className="text-sm sm:text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
-            >
-              {language === "zh" ? "首页" : "Home"}
-            </a>
-            <a
-              href="#works"
-              className="text-sm sm:text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
-            >
-              {language === "zh" ? "作品" : "Works"}
-            </a>
-            <a
-              href="#footprints"
-              className="text-sm sm:text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
-            >
-              {language === "zh" ? "足迹" : "Footprints"}
-            </a>
-            <a
-              href="https://blog.studioyyh.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm sm:text-base text-primary dark:text-primary hover:text-accent dark:hover:text-accent transition-colors duration-200 hover-underline"
-            >
-              {language === "zh" ? "博客" : "Blog"}
-            </a>
-          </nav>
-          {/* Language Toggle */}
-          {languageMounted && (
-            <button
-              onClick={toggleLanguage}
-              className="relative w-12 h-8 sm:w-14 sm:h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r transform hover:scale-105 flex-shrink-0 bg-primary/10 dark:bg-primary/20"
-              aria-label={
-                language === "zh" ? "Switch to English" : "切换到中文"
-              }
-            >
-              <div className="flex items-center justify-center w-full h-full">
-                <Languages className="w-4 h-4 sm:w-5 sm:h-5 text-primary dark:text-primary" />
-              </div>
-            </button>
-          )}
-          {/* Theme Toggle */}
-          {mounted && (
-            <button
-              onClick={toggleTheme}
-              className="relative w-12 h-8 sm:w-14 sm:h-8 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gradient-to-r transform hover:scale-105 flex-shrink-0"
-              style={{ background: buttonBackground }}
-              aria-label={
-                isDark ? "Switch to light mode" : "Switch to dark mode"
-              }
-            >
-              <div className={sliderClass}>
-                <Sun className={sunClass} />
-                <Moon className={moonClass} />
-              </div>
-            </button>
-          )}
+        <nav aria-label={zh ? "主导航" : "Main navigation"}>
+          <a
+            href="#about"
+            aria-current={active === "about" ? "location" : undefined}
+          >
+            {zh ? "首页" : "Home"}
+          </a>
+          <a
+            href="#works"
+            aria-current={active === "works" ? "location" : undefined}
+          >
+            {zh ? "作品" : "Work"}
+          </a>
+          <a
+            href="#footprints"
+            aria-current={active === "footprints" ? "location" : undefined}
+          >
+            {zh ? "足迹" : "Life"}
+          </a>
+          <a
+            href="https://blog.studioyyh.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {zh ? "博客" : "Journal"}
+            <ArrowUpRight size={12} />
+          </a>
+        </nav>
+        <div className="header-tools">
+          <button
+            className="language-toggle"
+            onClick={toggleLanguage}
+            aria-label={zh ? "Switch to English" : "切换到中文"}
+          >
+            {zh ? "EN" : "中"}
+          </button>
+          <span className="tool-divider" />
+          <button
+            className="icon-button"
+            onClick={toggleTheme}
+            aria-label={
+              zh
+                ? isDark
+                  ? "切换浅色主题"
+                  : "切换深色主题"
+                : isDark
+                  ? "Switch to light mode"
+                  : "Switch to dark mode"
+            }
+          >
+            {isDark ? <Sun size={17} /> : <Moon size={17} />}
+          </button>
         </div>
       </div>
     </header>
   );
-});
-
-export default Header;
+}

@@ -9,9 +9,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
 
   // Load language from localStorage on mount
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage && (savedLanguage === "zh" || savedLanguage === "en")) {
-      setLanguage(savedLanguage);
+    try {
+      const savedLanguage = localStorage.getItem("language");
+      if (savedLanguage === "zh" || savedLanguage === "en")
+        setLanguage(savedLanguage);
+    } catch {
+      // Keep the default language when browser storage is unavailable.
     }
     setMounted(true);
   }, []);
@@ -19,7 +22,16 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   // Save language to localStorage
   useEffect(() => {
     if (mounted) {
-      localStorage.setItem("language", language);
+      document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+      document.title =
+        language === "zh"
+          ? "STUDIO YYH — 保持好奇，持续创造"
+          : "STUDIO YYH — Stay curious. Keep creating.";
+      try {
+        localStorage.setItem("language", language);
+      } catch {
+        // Language switching still works without persistent storage.
+      }
     }
   }, [language, mounted]);
 

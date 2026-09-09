@@ -1,227 +1,181 @@
-// src/components/Hero.tsx
-import React from "react";
-import { SiGithub } from "react-icons/si";
-import { FaEnvelope, FaChevronDown, FaLinkedin } from "react-icons/fa";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { useRef } from "react";
+import type { PointerEvent } from "react";
 import { useLanguage } from "../hooks/useLanguage";
-import { useTheme } from "../hooks/useTheme";
-import BinaryGlobe from "./ui/binary-globe";
-import WavyBackground from "./ui/wavy-background";
 
-const DARK_WAVE_COLORS = ["#38bdf8", "#22d3ee", "#818cf8", "#f472b6"];
-
-const Hero = () => {
-  const { language } = useLanguage();
-  const { isDark } = useTheme();
-
-  const hobbies =
-    language === "zh"
-      ? [
-        {
-          name: "跆拳道",
-          icon: "🥋",
-          color:
-            "bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400",
-        },
-        {
-          name: "网球",
-          icon: "🎾",
-          color:
-            "bg-lime-100 text-lime-600 dark:bg-lime-500/20 dark:text-lime-400",
-        },
-        {
-          name: "游泳",
-          icon: "🏊",
-          color:
-            "bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400",
-        },
-        {
-          name: "旅行",
-          icon: "✈️",
-          color:
-            "bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400",
-        },
-      ]
-      : [
-        {
-          name: "Taekwondo",
-          icon: "🥋",
-          color:
-            "bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400",
-        },
-        {
-          name: "Tennis",
-          icon: "🎾",
-          color:
-            "bg-lime-100 text-lime-600 dark:bg-lime-500/20 dark:text-lime-400",
-        },
-        {
-          name: "Swimming",
-          icon: "🏊",
-          color:
-            "bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400",
-        },
-        {
-          name: "Travel",
-          icon: "✈️",
-          color:
-            "bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400",
-        },
-      ];
-
+function RibbonMark() {
+  const mark = useRef<HTMLDivElement>(null);
+  const move = (event: PointerEvent<HTMLDivElement>) => {
+    if (
+      event.pointerType !== "mouse" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+      return;
+    const box = event.currentTarget.getBoundingClientRect();
+    mark.current?.style.setProperty(
+      "--turn-x",
+      `${(event.clientY - box.top - box.height / 2) / 70}deg`,
+    );
+    mark.current?.style.setProperty(
+      "--turn-y",
+      `${(event.clientX - box.left - box.width / 2) / 60}deg`,
+    );
+  };
+  const reset = () => {
+    mark.current?.style.setProperty("--turn-x", "0deg");
+    mark.current?.style.setProperty("--turn-y", "0deg");
+  };
   return (
-    <section
-      id="about"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-secondary to-background dark:from-secondary/30 dark:to-background relative overflow-hidden"
+    <div
+      className="hero-art"
+      onPointerMove={move}
+      onPointerLeave={reset}
+      aria-hidden="true"
     >
-      {isDark ? (
-        <div className="absolute inset-0 pointer-events-none">
-          <WavyBackground
-            colors={DARK_WAVE_COLORS}
-            waveWidth={64}
-            backgroundFill="#05070d"
-            blur={14}
-            speed="fast"
-            waveOpacity={0.68}
-            containerClassName="opacity-95"
-          />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,transparent_0%,rgba(0,0,0,0.08)_24%,rgba(0,0,0,0.72)_78%)]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background/70" />
-        </div>
-      ) : (
-        <>
-          {/* Background Decorative Elements */}
-          <div className="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl delay-700" />
-          <BinaryGlobe isDark={isDark} />
-        </>
-      )}
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold tracking-widest uppercase">
-            {language === "zh" ? "欢迎来到我的世界" : "Welcome to my world"}
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-12 tracking-tighter leading-tight">
-            {language === "zh" ? (
-              <div className="flex flex-col gap-4 sm:gap-6">
-                <div className="animate-slide-in-left">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-blue-500">
-                    YYH · 以恒
-                  </span>
-                </div>
-                <div className="animate-slide-in-right">
-                  <span className="text-primary dark:text-primary">
-                    未来已来
-                  </span>
-                </div>
-              </div>
-            ) : (
-              <div className="flex flex-col gap-4 sm:gap-6">
-                <div className="animate-slide-in-left">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-blue-500">
-                    YYH · Aaron
-                  </span>
-                </div>
-                <div className="animate-slide-in-right">
-                  <span className="text-primary dark:text-primary">
-                    The Future Is Here
-                  </span>
-                </div>
-              </div>
-            )}
-          </h1>
-
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-10">
-            <div className="group cursor-default">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-accent transition-colors duration-300 font-cute">
-                <span className="text-accent group-hover:text-primary transition-colors duration-300">
-                  Y
-                </span>
-                outhful
-              </span>
-              <div className="h-1 w-0 group-hover:w-full bg-accent transition-all duration-300 rounded-full" />
-            </div>
-            <div className="group cursor-default">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-blue-500 transition-colors duration-300 font-cute">
-                <span className="text-accent group-hover:text-primary transition-colors duration-300">
-                  Y
-                </span>
-                ummy
-              </span>
-              <div className="h-1 w-0 group-hover:w-full bg-blue-500 transition-all duration-300 rounded-full" />
-            </div>
-            <div className="group cursor-default">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wider drop-shadow-sm group-hover:text-purple-500 transition-colors duration-300 font-cute">
-                <span className="text-accent group-hover:text-primary transition-colors duration-300">
-                  H
-                </span>
-                appy
-              </span>
-              <div className="h-1 w-0 group-hover:w-full bg-purple-500 transition-all duration-300 rounded-full" />
-            </div>
-          </div>
-
-          {/* Hobbies as Tags */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {hobbies.map((hobby, index) => (
-              <div
-                key={index}
-                className={`flex items-center gap-2 px-4 py-2 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-default ${hobby.color} border border-transparent hover:border-current/20`}
-              >
-                <span className="text-xl">{hobby.icon}</span>
-                <span className="font-bold">{hobby.name}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center items-center space-x-8 mb-16">
-            <a
-              href="https://github.com/phoenixlwpapix"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-4 bg-white dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/20 transition-all duration-300 hover:-translate-y-2 border border-transparent dark:border-white/5"
+      <div className="art-orbit" />
+      <span className="art-coordinate">FIG. 01 — A STUDY IN CURIOSITY</span>
+      <div className="ribbon-mark" ref={mark}>
+        <svg viewBox="0 0 600 540" fill="none" className="ribbon-svg">
+          <defs>
+            <linearGradient
+              id="ribbon-paper"
+              x1="100"
+              y1="80"
+              x2="440"
+              y2="490"
+              gradientUnits="userSpaceOnUse"
             >
-              <SiGithub className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
-              <span className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full scale-0 group-hover:scale-100 transition-transform" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-4 bg-white dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/20 transition-all duration-300 hover:-translate-y-2 border border-transparent dark:border-white/5"
+              <stop stopColor="#e5e0d5" />
+              <stop offset=".48" stopColor="#f8f5ec" />
+              <stop offset="1" stopColor="#aaa89e" />
+            </linearGradient>
+            <linearGradient
+              id="ribbon-ink"
+              x1="180"
+              y1="110"
+              x2="380"
+              y2="450"
+              gradientUnits="userSpaceOnUse"
             >
-              <FaLinkedin className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
-              <span className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full scale-0 group-hover:scale-100 transition-transform" />
-            </a>
-            <a
-              href="mailto:phoenixlwp@gmail.com"
-              className="group relative p-4 bg-white dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/20 transition-all duration-300 hover:-translate-y-2 border border-transparent dark:border-white/5"
+              <stop stopColor="#585b50" />
+              <stop offset=".5" stopColor="#292c25" />
+              <stop offset="1" stopColor="#13160f" />
+            </linearGradient>
+            <linearGradient
+              id="ribbon-orange"
+              x1="350"
+              y1="70"
+              x2="450"
+              y2="470"
+              gradientUnits="userSpaceOnUse"
             >
-              <FaEnvelope className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
-              <span className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full scale-0 group-hover:scale-100 transition-transform" />
-            </a>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs font-bold tracking-widest text-primary/40 uppercase">
-              {language === "zh" ? "向下探索" : "Scroll to explore"}
-            </span>
-            <FaChevronDown
-              className="w-6 h-6 text-accent cursor-pointer opacity-50 hover:opacity-100 transition-opacity"
-              onClick={() =>
-                document
-                  .getElementById("works")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              <stop stopColor="#ed805b" />
+              <stop offset=".48" stopColor="#d34b32" />
+              <stop offset="1" stopColor="#a82c1b" />
+            </linearGradient>
+          </defs>
+          <g className="ribbon ribbon-one">
+            <path d="M67 146 128 112 222 243 185 291Z" fill="#a6a69a" />
+            <path
+              d="m67 130 61-34 100 136 46-158 62 29-72 236-78 105-60-33 77-107Z"
+              fill="url(#ribbon-paper)"
             />
+            <path d="m126 411 60 33 78-105-61-35Z" fill="#b7b6aa" />
+            <path d="m274 74 62 29-72 236-36-107Z" fill="#dedbd0" />
+          </g>
+          <g className="ribbon ribbon-two">
+            <path
+              d="m220 197 57-39 76 100 41-128 59 31-61 190-78 126-62-35 79-123Z"
+              fill="url(#ribbon-ink)"
+            />
+            <path d="m252 442 62 35 78-126-61-32Z" fill="#20241b" />
+            <path d="m394 130 59 31-61 190-39-93Z" fill="#44483c" />
+          </g>
+          <g className="ribbon ribbon-three">
+            <path
+              d="m411 85 58 31-33 120 55 29 34-120 58 31-93 328-59-31 38-134-55-29-38 134-58-31Z"
+              fill="url(#ribbon-orange)"
+            />
+            <path d="m318 413 58 31 38-134-29-57Z" fill="#a93523" />
+            <path d="m431 473 59 31 93-328-30 9Z" fill="#be4029" />
+            <path d="m436 236 55 29-22 74-55-29Z" fill="#f08b66" />
+          </g>
+        </svg>
+      </div>
+      <div className="art-caption">
+        <span>
+          THREE LETTERS.
+          <br />
+          ENDLESS POSSIBILITIES.
+        </span>
+        <span className="art-cross">+</span>
+      </div>
+    </div>
+  );
+}
+
+export default function Hero() {
+  const { language } = useLanguage();
+  const zh = language === "zh";
+  return (
+    <section id="about" className="hero page-shell">
+      <div className="hero-grid">
+        <div className="hero-copy">
+          <p className="eyebrow hero-enter">
+            <span className="status-dot" />{" "}
+            {zh ? "以恒的个人创作空间" : "THE PERSONAL STUDIO OF YYH"}
+          </p>
+          <h1 className="hero-title">
+            <span className="title-mask">
+              <span>{zh ? "保持好奇，" : "Stay curious."}</span>
+            </span>
+            <span className="title-mask">
+              <span>{zh ? "把想法" : "Make things"}</span>
+            </span>
+            <span className="title-mask">
+              <span className="serif-accent">
+                {zh ? "变成作品。" : "that matter."}
+              </span>
+            </span>
+          </h1>
+          <p className="hero-description hero-enter">
+            {zh
+              ? "我是以恒。探索代码、语言与生活，"
+              : "I’m Aaron. Exploring code, languages and life."}
+            <br />
+            {zh
+              ? "做一些有用，也有趣的东西。"
+              : "Making useful things, with a little delight."}
+          </p>
+          <div className="hero-actions hero-enter">
+            <a className="button-primary" href="#works">
+              {zh ? "探索作品" : "Explore my work"}
+              <ArrowUpRight size={18} />
+            </a>
+            <a className="text-link" href="#footprints">
+              {zh ? "屏幕之外" : "Beyond the screen"}
+              <ArrowDown size={16} />
+            </a>
           </div>
         </div>
+        <RibbonMark />
+      </div>
+      <div className="hero-bottom">
+        <span className="brand-words">
+          <b>Y</b>outhful, <b>Y</b>ummy, <b>H</b>appy.
+        </span>
+        <span className="hero-bottom-note">
+          {zh
+            ? "在创造中学习，在生活里发现。"
+            : "LEARNING BY MAKING. LIVING WITH CURIOSITY."}
+        </span>
+        <a
+          href="#works"
+          aria-label={zh ? "向下探索作品" : "Scroll to selected work"}
+        >
+          <ArrowDown size={18} />
+        </a>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

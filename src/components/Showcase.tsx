@@ -1,99 +1,225 @@
-// src/components/Showcase.tsx
-import React from "react";
+import { useState } from "react";
+import { ArrowDown, ArrowUpRight, Github } from "lucide-react";
 import { projects } from "../data/projects";
-import type { Project } from "../data/projects";
 import { useLanguage } from "../hooks/useLanguage";
-import { ExternalLink, Github } from "lucide-react";
 
-interface ProjectCardProps extends Project {
-  language: "zh" | "en";
-}
+const selected = [
+  {
+    name: "Voce",
+    image: "/images/projects/voce.jpg",
+    className: "featured-project project-voce",
+    category: ["语言学习 / 词汇笔记", "LANGUAGE / VOCABULARY"],
+    headline: ["让每个新词，都有迹可循。", "A little home for every new word."],
+  },
+  {
+    name: "ConjuGO",
+    image: "/images/projects/conjugo.jpg",
+    className: "featured-project project-conjugo",
+    category: ["语言学习 / 交互练习", "LANGUAGE / PRACTICE"],
+    headline: ["把复杂变位，练成自然反应。", "Make conjugation second nature."],
+  },
+  {
+    name: "Dolphin English",
+    image: "/images/projects/dolphin-mascot.png",
+    className: "featured-project project-dolphin",
+    category: ["AI / 英语精读", "AI / READING"],
+    headline: ["读懂一篇，也多懂一点世界。", "Read a little. Discover a lot."],
+  },
+];
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  title,
-  description,
-  imageUrl,
-  demoUrl,
-  githubUrl,
-  language,
-}) => {
-  // Extract hex color from placeholder URL (e.g., 4F9DFF from https://placehold.co/600x400/4F9DFF/...)
-  const match = imageUrl.match(/\/([0-9A-Fa-f]{6})\//);
-  const themeColor = match ? `#${match[1]}` : "var(--accent)";
-
+export default function Showcase() {
+  const { language } = useLanguage();
+  const [expanded, setExpanded] = useState(false);
+  const zh = language === "zh";
+  const remaining = projects.filter(
+    (project) => !selected.some((item) => item.name === project.title.en),
+  );
+  const visible = expanded ? remaining : remaining.slice(0, 5);
   return (
-    <div
-      onClick={() => window.open(demoUrl, "_blank", "noopener,noreferrer")}
-      className="block group rounded-xl overflow-hidden bg-secondary dark:bg-secondary shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
-      style={{ "--project-hover": themeColor } as React.CSSProperties}
-    >
-      <div className="p-6 pb-4">
-        <div className="flex justify-between items-start mb-3">
-          <div className="flex items-center gap-3">
-            <div className="w-1.5 h-6 bg-[var(--project-hover)] rounded-full transform origin-bottom group-hover:scale-y-125 transition-transform duration-300" />
-            <h3 className="text-2xl font-extrabold text-primary dark:text-primary group-hover:text-[var(--project-hover)] transition-colors duration-300 tracking-tight">
-              {title[language]}
-            </h3>
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                window.open(demoUrl, "_blank", "noopener,noreferrer");
-              }}
-              className="p-2 rounded-full bg-primary/5 hover:bg-[var(--project-hover)] hover:text-white transition-all duration-300 text-primary/60"
-              title={language === "zh" ? "打开应用" : "Open Demo"}
-            >
-              <ExternalLink size={20} />
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                window.open(githubUrl, "_blank", "noopener,noreferrer");
-              }}
-              className="p-2 rounded-full bg-primary/5 hover:bg-primary hover:text-white transition-all duration-300 text-primary/60"
-              title="GitHub"
-            >
-              <Github size={20} />
-            </button>
-          </div>
+    <section id="works" className="work-section page-shell">
+      <div className="section-heading reveal">
+        <div>
+          <p className="eyebrow">01 / SELECTED WORK</p>
+          <h2>{zh ? "想法，正在发生。" : "Ideas, made real."}</h2>
         </div>
-        <p className="text-primary/70 dark:text-primary/70 line-clamp-2 h-12 text-sm sm:text-base">
-          {description[language]}
+        <p className="section-description">
+          {zh ? (
+            <>
+              从一个小小的好奇开始，
+              <br />
+              到一个可以亲手打开的作品。
+            </>
+          ) : (
+            <>
+              A spark of curiosity.
+              <br />
+              Something you can actually use.
+            </>
+          )}
         </p>
       </div>
-      <img
-        src={imageUrl}
-        alt={title[language]}
-        className="w-full aspect-video object-cover"
-      />
-    </div>
-  );
-};
-
-const Showcase = () => {
-  const { language } = useLanguage();
-
-  return (
-    <section
-      id="works"
-      className="py-16 sm:py-20 bg-background relative overflow-hidden"
-    >
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-32 -mt-32" />
-
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 sm:mb-12 text-primary dark:text-primary">
-          {language === "zh" ? "我的应用" : "My Apps"}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} language={language} />
+      <div className="featured-grid">
+        {selected.map((item, index) => {
+          const project = projects.find(
+            (project) => project.title.en === item.name,
+          );
+          if (!project) return null;
+          return (
+            <article key={item.name} className={item.className}>
+              <a
+                className="project-visual"
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${zh ? "打开" : "Open"} ${project.title[language]}`}
+              >
+                <div className="project-art-label">
+                  <span>{item.name}</span>
+                  <span>0{index + 1} / YYH</span>
+                </div>
+                {item.name === "Dolphin English" ? (
+                  <div className="dolphin-art">
+                    <p>
+                      {zh ? (
+                        <>
+                          每一篇文章，
+                          <br />
+                          都是新世界。
+                        </>
+                      ) : (
+                        <>
+                          A new world.
+                          <br />
+                          In every story.
+                        </>
+                      )}
+                    </p>
+                    <span>READ. LEARN. DISCOVER.</span>
+                    <img
+                      src={item.image}
+                      alt={
+                        zh
+                          ? "海豚英语品牌吉祥物"
+                          : "Dolphin English brand mascot"
+                      }
+                      loading="lazy"
+                      width="600"
+                      height="600"
+                    />
+                  </div>
+                ) : (
+                  <div className="project-browser">
+                    <div className="browser-bar">
+                      <i />
+                      <i />
+                      <i />
+                      <span>{new URL(project.demoUrl).hostname}</span>
+                    </div>
+                    <img
+                      src={item.image}
+                      alt={
+                        zh
+                          ? `${project.title.zh}实际界面`
+                          : `${project.title.en} interface`
+                      }
+                      loading="lazy"
+                      width="1440"
+                      height="1000"
+                    />
+                  </div>
+                )}
+                <span className="project-open">
+                  <ArrowUpRight size={23} />
+                </span>
+              </a>
+              <div className="project-info">
+                <div>
+                  <p className="eyebrow">{item.category[zh ? 0 : 1]}</p>
+                  <h3>
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.title[language]}
+                      <ArrowUpRight size={20} />
+                    </a>
+                  </h3>
+                  <p>{item.headline[zh ? 0 : 1]}</p>
+                </div>
+                {project.githubUrl && (
+                  <a
+                    className="icon-button"
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title[language]} GitHub`}
+                  >
+                    <Github size={19} />
+                  </a>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+      <div className="project-index reveal">
+        <div className="index-heading">
+          <h3>
+            {zh ? "更多探索" : "More explorations"}
+            <span> / {String(remaining.length).padStart(2, "0")}</span>
+          </h3>
+          <span className="eyebrow">THE EXPERIMENT COLLECTION</span>
+        </div>
+        <div id="project-directory">
+          {visible.map((project, index) => (
+            <div className="project-row" key={project.title.en}>
+              <span className="row-number">
+                {String(index + 4).padStart(2, "0")}
+              </span>
+              <a
+                className="row-main"
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h4>{project.title[language]}</h4>
+                <p>{project.description[language]}</p>
+                <ArrowUpRight size={20} />
+              </a>
+              {project.githubUrl && (
+                <a
+                  className="row-github icon-button"
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title[language]} GitHub`}
+                >
+                  <Github size={16} />
+                </a>
+              )}
+            </div>
           ))}
         </div>
+        <button
+          className="directory-toggle text-link"
+          aria-expanded={expanded}
+          aria-controls="project-directory"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded
+            ? zh
+              ? "收起目录"
+              : "Show less"
+            : zh
+              ? `展开全部 ${projects.length} 个作品`
+              : `Explore all ${projects.length} projects`}
+          <ArrowDown
+            size={16}
+            className={expanded ? "rotate-arrow" : undefined}
+          />
+        </button>
       </div>
     </section>
   );
-};
-
-export default Showcase;
+}

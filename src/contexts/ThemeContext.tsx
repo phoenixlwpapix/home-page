@@ -9,15 +9,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
 
   // Load theme from localStorage on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    if (savedTheme) {
-      setIsDark(savedTheme === "dark");
-    } else {
-      setIsDark(prefersDark);
+    try {
+      setIsDark(localStorage.getItem("theme") === "dark");
+    } catch {
+      // Keep the light default when browser storage is unavailable.
     }
     setMounted(true);
   }, []);
@@ -30,7 +25,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
       } else {
         document.documentElement.classList.remove("dark");
       }
-      localStorage.setItem("theme", isDark ? "dark" : "light");
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", isDark ? "#191b17" : "#f5f3ee");
+      try {
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      } catch {
+        // Theme switching still works without persistent storage.
+      }
     }
   }, [isDark, mounted]);
 

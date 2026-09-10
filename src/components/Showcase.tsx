@@ -6,7 +6,7 @@ import { useLanguage } from "../hooks/useLanguage";
 const selected = [
   {
     name: "Voce",
-    image: "/images/projects/voce.jpg",
+    image: "/images/projects/voce-authenticated.png",
     className: "featured-project project-voce",
     category: ["语言学习 / 词汇笔记", "LANGUAGE / VOCABULARY"],
     headline: [
@@ -43,7 +43,7 @@ export default function Showcase() {
   const remaining = projects.filter(
     (project) => !selected.some((item) => item.name === project.title.en),
   );
-  const visible = expanded ? remaining : remaining.slice(0, 5);
+  const visible = expanded ? remaining : remaining.slice(0, 3);
   return (
     <section id="works" className="work-section page-shell">
       <div className="section-heading reveal">
@@ -131,8 +131,8 @@ export default function Showcase() {
                           : `${project.title.en} interface`
                       }
                       loading="lazy"
-                      width="1440"
-                      height="1000"
+                      width={item.name === "Voce" ? 1700 : 1440}
+                      height={item.name === "Voce" ? 1180 : 1000}
                     />
                   </div>
                 )}

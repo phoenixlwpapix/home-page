@@ -22,7 +22,6 @@ export default function Hero() {
             <span>{zh ? "嗨，我是" : "Hey, I'm"}</span>
             <strong>
               {zh ? "以恒" : "Aaron"}
-              <span className="name-dot">.</span>
             </strong>
             <span className="name-scribble">
               YYH

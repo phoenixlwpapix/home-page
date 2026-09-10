@@ -51,7 +51,7 @@ export default function Header() {
             href="#footprints"
             aria-current={active === "footprints" ? "location" : undefined}
           >
-            {zh ? "去过哪儿" : "Adventures"}
+            {zh ? "我的足迹" : "Adventures"}
           </a>
           <a
             href="https://blog.studioyyh.com"

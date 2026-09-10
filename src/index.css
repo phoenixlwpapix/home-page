@@ -1127,9 +1127,6 @@ body {
   font-family: "Fredoka", "Noto Sans SC", "Microsoft YaHei", sans-serif;
   font-weight: 600;
 }
-.name-dot {
-  color: var(--brand-blue);
-}
 .name-scribble {
   display: inline-block;
   vertical-align: bottom;
@@ -1295,17 +1292,22 @@ body {
   aspect-ratio: 1.25;
   margin-top: 5px;
 }
+.globe-canvas-wrap {
+  width: 88%;
+  aspect-ratio: 1;
+  position: absolute;
+  left: -3%;
+  top: -1%;
+}
 .travel-globe {
   clip-path: circle(44% at 50% 50%);
-  width: 88%;
-  height: auto;
-  aspect-ratio: 1;
+  width: 100%;
+  height: 100%;
   display: block;
   cursor: grab;
   touch-action: pan-y;
   position: absolute;
-  left: -3%;
-  top: -1%;
+  inset: 0;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -1314,6 +1316,52 @@ body {
 }
 .travel-globe.is-ready {
   opacity: 1;
+}
+.globe-marker-label {
+  display: none;
+}
+@supports (position-anchor: --cobe-label) {
+  .globe-marker-label {
+    display: block;
+    position: absolute;
+    bottom: anchor(top);
+    left: anchor(center);
+    z-index: 4;
+    translate: calc(-50% + var(--label-x, 0px))
+      calc(-8px + var(--label-y, 0px));
+    padding: 5px 8px;
+    border: 1px solid #12344a1f;
+    border-radius: 6px 6px 6px 2px;
+    background: color-mix(in srgb, var(--card) 92%, transparent);
+    box-shadow: 0 3px 10px #1038581a;
+    color: var(--foreground);
+    font-family: "Fredoka", "Noto Sans SC", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    transition:
+      opacity 0.22s,
+      background 0.22s,
+      color 0.22s;
+  }
+  .globe-marker-label[data-selected] {
+    border-color: #e6ca5c;
+    background: #fff1ac;
+    color: #5c5125;
+  }
+  .globe-marker-label[data-place="paris"] {
+    --label-x: -22px;
+    --label-y: -3px;
+  }
+  .globe-marker-label[data-place="jungfrau"] {
+    --label-x: 22px;
+    --label-y: -17px;
+  }
+  .globe-marker-label[data-place="bali"] {
+    --label-x: -30px;
+  }
 }
 .globe-fallback {
   position: absolute;

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import type { Globe, COBEOptions } from "cobe";
 import {
   ArrowLeft,
@@ -13,16 +14,18 @@ import { useTheme } from "../hooks/useTheme";
 
 const places = [
   {
-    zh: "武夷山",
-    en: "Wuyi Mountains",
-    note: "钻进山里，吸一口新鲜空气。",
-    noteEn: "A little mountain air.",
-    image: "/images/footprints/fujian_wuyishan.webp",
-    date: "2026.05",
-    lat: 27.7,
-    lng: 118,
+    id: "maldives",
+    zh: "马尔代夫",
+    en: "Maldives",
+    note: "住进海上小屋，和珊瑚礁做邻居。",
+    noteEn: "Overwater days with coral reefs next door.",
+    image: "/images/footprints/maldives_faarufushi.webp",
+    date: "2024.01",
+    lat: 5.768,
+    lng: 72.966,
   },
   {
+    id: "paris",
     zh: "巴黎",
     en: "Paris",
     note: "这次，铁塔不在课本里。",
@@ -33,6 +36,7 @@ const places = [
     lng: 2.29,
   },
   {
+    id: "jungfrau",
     zh: "少女峰",
     en: "Jungfrau",
     note: "在雪山上，跟世界打个招呼。",
@@ -43,6 +47,7 @@ const places = [
     lng: 7.98,
   },
   {
+    id: "bali",
     zh: "巴厘岛",
     en: "Bali",
     note: "海风、阳光，还有下一次出发。",
@@ -53,6 +58,13 @@ const places = [
     lng: 115.14,
   },
 ];
+type MarkerLabelStyle = CSSProperties & { positionAnchor: string };
+
+const markerLabelStyle = (id: string): MarkerLabelStyle => ({
+  positionAnchor: `--cobe-${id}`,
+  opacity: `var(--cobe-visible-${id}, 0)`,
+});
+
 const phiFor = (lng: number) => Math.PI * 1.5 - (lng * Math.PI) / 180;
 const globePalette = (
   dark: boolean,
@@ -75,8 +87,8 @@ export default function TravelGlobe() {
   const theme = useRef(isDark);
   const wakeGlobe = useRef<() => void>(() => {});
   const motion = useRef({
-    phi: phiFor(118),
-    target: phiFor(118),
+    phi: phiFor(72.966),
+    target: phiFor(72.966),
     dragging: false,
     x: 0,
     paused: false,
@@ -102,6 +114,7 @@ export default function TravelGlobe() {
   useEffect(() => {
     const element = canvas.current;
     if (!element) return;
+    const interactionRoot = element.parentElement;
     let disposed = false;
     let frame = 0;
     let visible = true;
@@ -154,7 +167,7 @@ export default function TravelGlobe() {
     reduced.addEventListener("change", wake);
     element.addEventListener("pointermove", wake);
     // External controls also wake a static globe when reduced motion is enabled.
-    element.parentElement?.addEventListener("click", wake);
+    interactionRoot?.addEventListener("click", wake);
     void import("cobe")
       .then(({ default: createGlobe }) => {
         if (disposed) return;
@@ -176,6 +189,7 @@ export default function TravelGlobe() {
             markers: places.map((p) => ({
               location: [p.lat, p.lng],
               size: 0.065,
+              id: p.id,
             })),
           });
           setReady(true);
@@ -211,7 +225,7 @@ export default function TravelGlobe() {
       document.removeEventListener("visibilitychange", visibility);
       reduced.removeEventListener("change", wake);
       element.removeEventListener("pointermove", wake);
-      element.parentElement?.removeEventListener("click", wake);
+      interactionRoot?.removeEventListener("click", wake);
       globe.current?.destroy();
       globe.current = null;
     };
@@ -239,37 +253,51 @@ export default function TravelGlobe() {
             <Globe2 strokeWidth={0.65} />
           </div>
         )}
-        <canvas
-          ref={canvas}
-          className={ready ? "travel-globe is-ready" : "travel-globe"}
-          aria-label={
-            zh
-              ? "可拖动的旅行地球，下方按钮可选择地点"
-              : "Draggable travel globe. Select a place using the buttons below."
-          }
-          onPointerDown={(event) => {
-            motion.current.dragging = true;
-            motion.current.x = event.clientX;
-            event.currentTarget.setPointerCapture(event.pointerId);
-          }}
-          onPointerMove={(event) => {
-            if (motion.current.dragging) {
-              motion.current.phi += (event.clientX - motion.current.x) / 180;
-              motion.current.target = motion.current.phi;
-              motion.current.x = event.clientX;
-              globe.current?.update({ phi: motion.current.phi });
+        <div className="globe-canvas-wrap">
+          <canvas
+            ref={canvas}
+            className={ready ? "travel-globe is-ready" : "travel-globe"}
+            aria-label={
+              zh
+                ? "可拖动的旅行地球，下方按钮可选择地点"
+                : "Draggable travel globe. Select a place using the buttons below."
             }
-          }}
-          onPointerUp={() => {
-            motion.current.dragging = false;
-          }}
-          onPointerCancel={() => {
-            motion.current.dragging = false;
-          }}
-          onLostPointerCapture={() => {
-            motion.current.dragging = false;
-          }}
-        />
+            onPointerDown={(event) => {
+              motion.current.dragging = true;
+              motion.current.x = event.clientX;
+              event.currentTarget.setPointerCapture(event.pointerId);
+            }}
+            onPointerMove={(event) => {
+              if (motion.current.dragging) {
+                motion.current.phi += (event.clientX - motion.current.x) / 180;
+                motion.current.target = motion.current.phi;
+                motion.current.x = event.clientX;
+                globe.current?.update({ phi: motion.current.phi });
+              }
+            }}
+            onPointerUp={() => {
+              motion.current.dragging = false;
+            }}
+            onPointerCancel={() => {
+              motion.current.dragging = false;
+            }}
+            onLostPointerCapture={() => {
+              motion.current.dragging = false;
+            }}
+          />
+          {places.map((p, index) => (
+            <span
+              key={p.id}
+              className="globe-marker-label"
+              data-place={p.id}
+              data-selected={selected === index ? "" : undefined}
+              style={markerLabelStyle(p.id)}
+              aria-hidden="true"
+            >
+              {p.en}
+            </span>
+          ))}
+        </div>
         <div className="globe-controls">
           <button
             onClick={() => {

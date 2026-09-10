@@ -8,19 +8,21 @@ export default function Footer() {
     <footer className="site-footer page-shell">
       <div className="footer-top reveal">
         <div>
-          <p className="eyebrow">03 / KEEP IN TOUCH</p>
+          <p className="eyebrow">
+            {zh ? "你已经逛到底啦" : "YOU MADE IT TO THE BOTTOM"}
+          </p>
           <h2>
             {zh ? (
               <>
-                下一个有趣的想法，
+                好啦，我去玩了。
                 <br />
-                正在发生<span className="accent">。</span>
+                下次见<span className="accent">！</span>
               </>
             ) : (
               <>
-                There’s always
+                That's me for now.
                 <br />
-                another idea<span className="accent">.</span>
+                See you around<span className="accent">!</span>
               </>
             )}
           </h2>
@@ -32,11 +34,11 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <a className="wordmark" href="#about">
-          STUDIO YYH<span>.</span>
+          YYH<span>!</span>
         </a>
         <p>
           © {new Date().getFullYear()} YYH ·{" "}
-          {zh ? "保持好奇，持续创造。" : "Made with curiosity."}
+          {zh ? "Youthful · Yummy · Happy" : "Made with curiosity."}
         </p>
         <div>
           <a

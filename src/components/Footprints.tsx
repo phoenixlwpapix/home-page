@@ -99,19 +99,21 @@ export default function Footprints() {
       <div className="page-shell">
         <div className="section-heading reveal">
           <div>
-            <p className="eyebrow">02 / BEYOND THE SCREEN</p>
+            <p className="eyebrow">
+              {zh ? "电脑合上以后" : "AWAY FROM MY DESK"}
+            </p>
             <h2>
               {zh ? (
                 <>
-                  屏幕之外，
+                  球场、山顶，
                   <br />
-                  <span className="serif-accent">也在探索。</span>
+                  <span className="serif-accent">还有海边。</span>
                 </>
               ) : (
                 <>
-                  A life beyond
+                  On the court.
                   <br />
-                  <span className="serif-accent">the screen.</span>
+                  <span className="serif-accent">Out in the world.</span>
                 </>
               )}
             </h2>
@@ -124,8 +126,8 @@ export default function Footprints() {
             </p>
             <p className="muted">
               {zh
-                ? "有些灵感，来自合上电脑之后。"
-                : "Some ideas begin when the laptop closes."}
+                ? "这些照片里，也有另一个我。"
+                : "A few snapshots of the other me."}
             </p>
             <div className="life-tags">
               <span>{zh ? "运动" : "MOVEMENT"}</span>

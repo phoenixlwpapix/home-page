@@ -9,21 +9,30 @@ const selected = [
     image: "/images/projects/voce.jpg",
     className: "featured-project project-voce",
     category: ["语言学习 / 词汇笔记", "LANGUAGE / VOCABULARY"],
-    headline: ["让每个新词，都有迹可循。", "A little home for every new word."],
+    headline: [
+      "遇到不认识的词？先放进我的单词本。",
+      "A little home for every new word.",
+    ],
   },
   {
     name: "ConjuGO",
     image: "/images/projects/conjugo.jpg",
     className: "featured-project project-conjugo",
     category: ["语言学习 / 交互练习", "LANGUAGE / PRACTICE"],
-    headline: ["把复杂变位，练成自然反应。", "Make conjugation second nature."],
+    headline: [
+      "动词变来变去，练练就不怕了。",
+      "Make conjugation second nature.",
+    ],
   },
   {
     name: "Dolphin English",
     image: "/images/projects/dolphin-mascot.png",
     className: "featured-project project-dolphin",
     category: ["AI / 英语精读", "AI / READING"],
-    headline: ["读懂一篇，也多懂一点世界。", "Read a little. Discover a lot."],
+    headline: [
+      "找篇喜欢的文章，一边读一边学。",
+      "Read a little. Discover a lot.",
+    ],
   },
 ];
 
@@ -39,21 +48,20 @@ export default function Showcase() {
     <section id="works" className="work-section page-shell">
       <div className="section-heading reveal">
         <div>
-          <p className="eyebrow">01 / SELECTED WORK</p>
-          <h2>{zh ? "想法，正在发生。" : "Ideas, made real."}</h2>
+          <p className="eyebrow">{zh ? "我的代码游乐场" : "MADE BY ME"}</p>
+          <h2>{zh ? "我做的这些小东西" : "Things I've been making"}</h2>
         </div>
         <p className="section-description">
           {zh ? (
             <>
-              从一个小小的好奇开始，
+              学英语、记单词、偷个小懒……
               <br />
-              到一个可以亲手打开的作品。
+              遇到问题，就试着做个工具。
             </>
           ) : (
             <>
-              A spark of curiosity.
-              <br />
-              Something you can actually use.
+              Words, languages, everyday puzzles.
+              <br />A few tools I made along the way.
             </>
           )}
         </p>
@@ -169,7 +177,9 @@ export default function Showcase() {
             {zh ? "更多探索" : "More explorations"}
             <span> / {String(remaining.length).padStart(2, "0")}</span>
           </h3>
-          <span className="eyebrow">THE EXPERIMENT COLLECTION</span>
+          <span className="eyebrow">
+            {zh ? "还有这些 ↓" : "AND THERE'S MORE ↓"}
+          </span>
         </div>
         <div id="project-directory">
           {visible.map((project, index) => (

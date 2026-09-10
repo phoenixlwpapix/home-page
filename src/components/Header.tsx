@@ -31,7 +31,8 @@ export default function Header() {
     <header className={scrolled ? "site-header is-scrolled" : "site-header"}>
       <div className="page-shell header-inner">
         <a className="wordmark" href="#about" aria-label="Studio YYH home">
-          STUDIO YYH<span>.</span>
+          <img src="/favicon.svg" alt="" width="42" height="42" />
+          YYH<span>!</span>
         </a>
         <nav aria-label={zh ? "主导航" : "Main navigation"}>
           <a
@@ -44,20 +45,20 @@ export default function Header() {
             href="#works"
             aria-current={active === "works" ? "location" : undefined}
           >
-            {zh ? "作品" : "Work"}
+            {zh ? "小作品" : "My stuff"}
           </a>
           <a
             href="#footprints"
             aria-current={active === "footprints" ? "location" : undefined}
           >
-            {zh ? "足迹" : "Life"}
+            {zh ? "去过哪儿" : "Adventures"}
           </a>
           <a
             href="https://blog.studioyyh.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {zh ? "博客" : "Journal"}
+            {zh ? "随手记" : "Notes"}
             <ArrowUpRight size={12} />
           </a>
         </nav>

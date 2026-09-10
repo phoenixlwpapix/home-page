@@ -30,9 +30,9 @@ export default function Header() {
   return (
     <header className={scrolled ? "site-header is-scrolled" : "site-header"}>
       <div className="page-shell header-inner">
-        <a className="wordmark" href="#about" aria-label="Studio YYH home">
+        <a className="wordmark" href="#about" aria-label="STUDIO YYH home">
           <img src="/favicon.svg" alt="" width="42" height="42" />
-          YYH<span>!</span>
+          STUDIO YYH
         </a>
         <nav aria-label={zh ? "主导航" : "Main navigation"}>
           <a

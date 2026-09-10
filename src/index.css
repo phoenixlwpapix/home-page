@@ -1137,7 +1137,7 @@ body {
   font-family: "Fredoka", sans-serif;
   font-size: 35px;
   font-weight: 400;
-  rotate: 9deg;
+  rotate: 0deg;
   color: var(--foreground);
   position: relative;
 }

@@ -25,8 +25,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
       document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
       document.title =
         language === "zh"
-          ? "YYH — 以恒的小天地"
-          : "YYH — Aaron's little corner";
+          ? "STUDIO YYH — 以恒的小天地"
+          : "STUDIO YYH — Aaron's little corner";
       try {
         localStorage.setItem("language", language);
       } catch {

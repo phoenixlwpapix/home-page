@@ -34,10 +34,10 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <a className="wordmark" href="#about">
-          YYH<span>!</span>
+          STUDIO YYH
         </a>
         <p>
-          © {new Date().getFullYear()} YYH ·{" "}
+          © 2025-2026 STUDIO YYH ·{" "}
           {zh ? "Youthful · Yummy · Happy" : "Made with curiosity."}
         </p>
         <div>

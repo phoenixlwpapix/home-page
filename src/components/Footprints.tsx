@@ -100,7 +100,7 @@ export default function Footprints() {
         <div className="section-heading reveal">
           <div>
             <p className="eyebrow">
-              {zh ? "电脑合上以后" : "AWAY FROM MY DESK"}
+              {zh ? "02 / 生活不止屏幕" : "02 / OFFLINE ADVENTURES"}
             </p>
             <h2>
               {zh ? (

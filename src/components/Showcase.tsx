@@ -5,9 +5,19 @@ import { useLanguage } from "../hooks/useLanguage";
 
 const selected = [
   {
+    name: "Chat-O-Matic",
+    image: "/images/projects/chat-o-matic.jpg",
+    className: "reveal featured-project project-lead project-chat",
+    category: ["我的心头好 / AI 对话", "PERSONAL FAVORITE / AI CHAT"],
+    headline: [
+      "有问题，有脑洞，找聊聊机聊聊。",
+      "For every question and every little what-if.",
+    ],
+  },
+  {
     name: "Voce",
     image: "/images/projects/voce-authenticated.png",
-    className: "featured-project project-voce",
+    className: "reveal featured-project project-voce",
     category: ["语言学习 / 词汇笔记", "LANGUAGE / VOCABULARY"],
     headline: [
       "遇到不认识的词？先放进我的单词本。",
@@ -17,23 +27,14 @@ const selected = [
   {
     name: "ConjuGO",
     image: "/images/projects/conjugo.jpg",
-    className: "featured-project project-conjugo",
+    className: "reveal featured-project project-conjugo",
     category: ["语言学习 / 交互练习", "LANGUAGE / PRACTICE"],
     headline: [
       "动词变来变去，练练就不怕了。",
       "Make conjugation second nature.",
     ],
   },
-  {
-    name: "Dolphin English",
-    image: "/images/projects/dolphin-mascot.png",
-    className: "featured-project project-dolphin",
-    category: ["AI / 英语精读", "AI / READING"],
-    headline: [
-      "找篇喜欢的文章，一边读一边学。",
-      "Read a little. Discover a lot.",
-    ],
-  },
+
 ];
 
 export default function Showcase() {
@@ -48,8 +49,8 @@ export default function Showcase() {
     <section id="works" className="work-section page-shell">
       <div className="section-heading reveal">
         <div>
-          <p className="eyebrow">{zh ? "我的代码游乐场" : "MADE BY ME"}</p>
-          <h2>{zh ? "我做的这些小东西" : "Things I've been making"}</h2>
+          <p className="eyebrow">{zh ? "01 / 从好奇心开始" : "01 / SELECTED EXPLORATIONS"}</p>
+          <h2>{zh ? "想到了，就做出来。" : "Ideas, made real."}</h2>
         </div>
         <p className="section-description">
           {zh ? (
@@ -66,7 +67,7 @@ export default function Showcase() {
           )}
         </p>
       </div>
-      <div className="featured-grid">
+      <div className="featured-grid" tabIndex={0} role="region" aria-label={zh ? "精选作品，可横向滚动" : "Selected projects, scroll horizontally"}>
         {selected.map((item, index) => {
           const project = projects.find(
             (project) => project.title.en === item.name,
@@ -82,40 +83,9 @@ export default function Showcase() {
                 aria-label={`${zh ? "打开" : "Open"} ${project.title[language]}`}
               >
                 <div className="project-art-label">
-                  <span>{item.name}</span>
+                  <span>{project.title[language]}</span>
                   <span>0{index + 1} / YYH</span>
                 </div>
-                {item.name === "Dolphin English" ? (
-                  <div className="dolphin-art">
-                    <p>
-                      {zh ? (
-                        <>
-                          每一篇文章，
-                          <br />
-                          都是新世界。
-                        </>
-                      ) : (
-                        <>
-                          A new world.
-                          <br />
-                          In every story.
-                        </>
-                      )}
-                    </p>
-                    <span>READ. LEARN. DISCOVER.</span>
-                    <img
-                      src={item.image}
-                      alt={
-                        zh
-                          ? "海豚英语品牌吉祥物"
-                          : "Dolphin English brand mascot"
-                      }
-                      loading="lazy"
-                      width="600"
-                      height="600"
-                    />
-                  </div>
-                ) : (
                   <div className="project-browser">
                     <div className="browser-bar">
                       <i />
@@ -132,10 +102,9 @@ export default function Showcase() {
                       }
                       loading="lazy"
                       width={item.name === "Voce" ? 1700 : 1440}
-                      height={item.name === "Voce" ? 1180 : 1000}
+                      height={item.name === "Voce" ? 1180 : item.name === "Chat-O-Matic" ? 810 : 1000}
                     />
                   </div>
-                )}
                 <span className="project-open">
                   <ArrowUpRight size={23} />
                 </span>

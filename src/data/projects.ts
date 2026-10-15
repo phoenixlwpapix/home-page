@@ -64,17 +64,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/vocably",
   },
   {
-    title: { zh: "知了英语", en: "Cicada English" },
-    description: {
-      zh: "AI驱动的英语阅读训练平台",
-      en: "AI-powered English reading skill platform",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/4361EE/FFFFFF?text=Cicada%20English&font=roboto",
-    demoUrl: "https://cicada.studioyyh.com/",
-    githubUrl: "https://github.com/phoenixlwpapix/cicada-english",
-  },
-  {
     title: { zh: "芝麻问答", en: "Sesame Explainer" },
     description: {
       zh: "智能问答系统，提供详细解答和知识解释。",
@@ -139,49 +128,5 @@ export const projects: Project[] = [
       "https://placehold.co/600x400/FB5607/FFFFFF?text=Chez%20Liliane&font=roboto",
     demoUrl: "https://bakery.studioyyh.com/",
     githubUrl: "https://github.com/phoenixlwpapix/phoenixlwpapix.github.io",
-  },
-  {
-    title: { zh: "食旅星球", en: "Recipe Rover" },
-    description: {
-      zh: "通过智能配料匹配，探索世界各地的美食食谱。",
-      en: "Explore global cuisines through intelligent ingredient matching.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/FFBE0B/FFFFFF?text=Recipe%20Rover&font=roboto",
-    demoUrl: "https://recipe.studioyyh.com/",
-    githubUrl: "https://github.com/phoenixlwpapix/recipe-rover",
-  },
-  {
-    title: { zh: "任务统御者3000", en: "Task Master 3000" },
-    description: {
-      zh: "Neo Brutalism风格的待办列表任务管理器。",
-      en: "Neo Brutalism style todo list task manager.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/3F37C9/FFFFFF?text=Task%20Master%203000&font=roboto",
-    demoUrl: "https://todo.studioyyh.com/",
-    githubUrl: "",
-  },
-  {
-    title: { zh: "报价大师", en: "Quote Master" },
-    description: {
-      zh: "生成并管理报价单的项目。",
-      en: "A project for generating and managing quotes.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/10B981/FFFFFF?text=Quote%20Master&font=roboto",
-    demoUrl: "https://quote.studioyyh.com/",
-    githubUrl: "",
-  },
-  {
-    title: { zh: "代码金库", en: "Snip Vault" },
-    description: {
-      zh: "保存常用代码片段的应用。",
-      en: "An app for saving commonly used code snippets.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/06D6A0/FFFFFF?text=Snip%20Vault&font=roboto",
-    demoUrl: "https://snip.studioyyh.com/",
-    githubUrl: "",
   },
 ];

@@ -64,17 +64,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/vocably",
   },
   {
-    title: { zh: "芝麻问答", en: "Sesame Explainer" },
-    description: {
-      zh: "智能问答系统，提供详细解答和知识解释。",
-      en: "Intelligent Q&A system providing detailed answers and knowledge explanations.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/4895EF/FFFFFF?text=Sesame%20Explainer&font=roboto",
-    demoUrl: "https://sesame.studioyyh.com/",
-    githubUrl: "https://github.com/phoenixlwpapix/sesame-explainer",
-  },
-  {
     title: { zh: "灵犀", en: "LingXi" },
     description: {
       zh: "一个智能员工关系助手",

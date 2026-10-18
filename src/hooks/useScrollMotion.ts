@@ -37,7 +37,9 @@ export function useScrollMotion() {
           const box = element.parentElement?.getBoundingClientRect();
           if (box && box.bottom > 0 && box.top < window.innerHeight) {
             const offset = (window.innerHeight / 2 - box.top - box.height / 2) * Number(element.dataset.parallax);
-            element.style.setProperty("--parallax", `${Math.max(-65, Math.min(65, offset))}px`);
+            // Keep the image covering its frame at every scroll position and viewport size.
+            const travel = Math.max(0, (element.offsetHeight - box.height) / 2 - 1);
+            element.style.setProperty("--parallax", `${Math.max(-travel, Math.min(travel, offset))}px`);
           }
         });
       };

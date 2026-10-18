@@ -7,11 +7,21 @@ const selected = [
   {
     name: "Chat-O-Matic",
     image: "/images/projects/chat-o-matic.jpg",
-    className: "reveal featured-project project-lead project-chat",
+    className: "reveal featured-project project-chat",
     category: ["我的心头好 / AI 对话", "PERSONAL FAVORITE / AI CHAT"],
     headline: [
       "有问题，有脑洞，找聊聊机聊聊。",
       "For every question and every little what-if.",
+    ],
+  },
+  {
+    name: "Dolphin English",
+    image: "/images/projects/dolphin-mascot.png",
+    className: "reveal featured-project project-dolphin",
+    category: ["英语学习 / AI 精读", "ENGLISH / AI READING"],
+    headline: [
+      "和小海豚一起，把英语读得更明白。",
+      "Read, discover, and learn with a little dolphin.",
     ],
   },
   {
@@ -86,6 +96,19 @@ export default function Showcase() {
                   <span>{project.title[language]}</span>
                   <span>0{index + 1} / YYH</span>
                 </div>
+                {item.name === "Dolphin English" ? (
+                  <div className="dolphin-art">
+                    <p>{zh ? <>一起读懂<br />更大的世界。</> : <>Read a little.<br />Discover a lot.</>}</p>
+                    <span>READ · DISCOVER · GROW</span>
+                    <img
+                      src={item.image}
+                      alt={zh ? "海豚英语品牌吉祥物" : "Dolphin English brand mascot"}
+                      loading="lazy"
+                      width={1254}
+                      height={1254}
+                    />
+                  </div>
+                ) : (
                   <div className="project-browser">
                     <div className="browser-bar">
                       <i />
@@ -105,6 +128,7 @@ export default function Showcase() {
                       height={item.name === "Voce" ? 1180 : item.name === "Chat-O-Matic" ? 810 : 1000}
                     />
                   </div>
+                )}
                 <span className="project-open">
                   <ArrowUpRight size={23} />
                 </span>
@@ -154,7 +178,7 @@ export default function Showcase() {
           {visible.map((project, index) => (
             <div className="project-row" key={project.title.en}>
               <span className="row-number">
-                {String(index + 4).padStart(2, "0")}
+                {String(index + selected.length + 1).padStart(2, "0")}
               </span>
               <a
                 className="row-main"

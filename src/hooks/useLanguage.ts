@@ -3,7 +3,6 @@ import { createContext, useContext } from "react";
 export interface LanguageContextType {
   language: "zh" | "en";
   toggleLanguage: () => void;
-  mounted: boolean;
 }
 
 export const LanguageContext = createContext<LanguageContextType | undefined>(

@@ -100,7 +100,7 @@ export default function Showcase() {
                 {item.name === "Dolphin English" ? (
                   <div className="dolphin-art">
                     <p>{zh ? <>一起读懂<br />更大的世界。</> : <>Read a little.<br />Discover a lot.</>}</p>
-                    <span>READ · DISCOVER · GROW</span>
+                    <span aria-hidden="true">READ · DISCOVER · GROW</span>
                     <img
                       src={item.image.src}
                       srcSet={item.image.srcSet}
@@ -114,7 +114,7 @@ export default function Showcase() {
                   </div>
                 ) : (
                   <div className="project-browser">
-                    <div className="browser-bar">
+                    <div className="browser-bar" aria-hidden="true">
                       <i />
                       <i />
                       <i />

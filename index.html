@@ -10,14 +10,42 @@
     />
     <meta name="theme-color" content="#f6f7f2" />
     <title>STUDIO YYH — 以恒的小天地</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;800&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media = 'all'"
+      rel="preload"
+      href="/fonts/manrope-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var dark = false;
+        var lang = "zh";
+        try {
+          var savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "dark") dark = true;
+          else if (savedTheme === "light") dark = false;
+          else if (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            dark = true;
+          }
+          var savedLang = localStorage.getItem("language");
+          if (savedLang === "en" || savedLang === "zh") lang = savedLang;
+        } catch (_) {}
+        if (dark) {
+          root.classList.add("dark");
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", "#101b25");
+        }
+        root.lang = lang === "en" ? "en" : "zh-CN";
+        if (lang === "en") {
+          document.title = "STUDIO YYH — Aaron's little corner";
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

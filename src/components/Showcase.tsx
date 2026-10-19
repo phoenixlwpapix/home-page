@@ -2,11 +2,12 @@ import { useState } from "react";
 import { ArrowDown, ArrowUpRight, Github } from "lucide-react";
 import { projects } from "../data/projects";
 import { useLanguage } from "../hooks/useLanguage";
+import imagePreviews from "../data/image-previews.json";
 
 const selected = [
   {
     name: "Chat-O-Matic",
-    image: "/images/projects/chat-o-matic.jpg",
+    image: imagePreviews["/images/projects/chat-o-matic.jpg"],
     className: "reveal featured-project project-chat",
     category: ["我的心头好 / AI 对话", "PERSONAL FAVORITE / AI CHAT"],
     headline: [
@@ -16,7 +17,7 @@ const selected = [
   },
   {
     name: "Dolphin English",
-    image: "/images/projects/dolphin-mascot.png",
+    image: imagePreviews["/images/projects/dolphin-mascot.png"],
     className: "reveal featured-project project-dolphin",
     category: ["英语学习 / AI 精读", "ENGLISH / AI READING"],
     headline: [
@@ -26,7 +27,7 @@ const selected = [
   },
   {
     name: "Voce",
-    image: "/images/projects/voce-authenticated.png",
+    image: imagePreviews["/images/projects/voce-authenticated.png"],
     className: "reveal featured-project project-voce",
     category: ["语言学习 / 词汇笔记", "LANGUAGE / VOCABULARY"],
     headline: [
@@ -36,7 +37,7 @@ const selected = [
   },
   {
     name: "ConjuGO",
-    image: "/images/projects/conjugo.jpg",
+    image: imagePreviews["/images/projects/conjugo.jpg"],
     className: "reveal featured-project project-conjugo",
     category: ["语言学习 / 交互练习", "LANGUAGE / PRACTICE"],
     headline: [
@@ -101,11 +102,14 @@ export default function Showcase() {
                     <p>{zh ? <>一起读懂<br />更大的世界。</> : <>Read a little.<br />Discover a lot.</>}</p>
                     <span>READ · DISCOVER · GROW</span>
                     <img
-                      src={item.image}
+                      src={item.image.src}
+                      srcSet={item.image.srcSet}
+                      sizes="(max-width: 700px) 55vw, (max-width: 1552px) 30vw, 450px"
                       alt={zh ? "海豚英语品牌吉祥物" : "Dolphin English brand mascot"}
                       loading="lazy"
-                      width={1254}
-                      height={1254}
+                      decoding="async"
+                      width={item.image.width}
+                      height={item.image.height}
                     />
                   </div>
                 ) : (
@@ -117,15 +121,18 @@ export default function Showcase() {
                       <span>{new URL(project.demoUrl).hostname}</span>
                     </div>
                     <img
-                      src={item.image}
+                      src={item.image.src}
+                      srcSet={item.image.srcSet}
+                      sizes="(max-width: 700px) 75vw, (max-width: 1552px) 40vw, 620px"
                       alt={
                         zh
                           ? `${project.title.zh}实际界面`
                           : `${project.title.en} interface`
                       }
                       loading="lazy"
-                      width={item.name === "Voce" ? 1700 : 1440}
-                      height={item.name === "Voce" ? 1180 : item.name === "Chat-O-Matic" ? 810 : 1000}
+                      decoding="async"
+                      width={item.image.width}
+                      height={item.image.height}
                     />
                   </div>
                 )}

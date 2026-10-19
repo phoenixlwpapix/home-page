@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "src": "/images/previews/hero/switzerland_jungfrau-640.webp",
+    "srcSet": "/images/previews/hero/switzerland_jungfrau-640.webp 640w, /images/previews/hero/switzerland_jungfrau-1280.webp 1280w, /images/previews/hero/switzerland_jungfrau-1920.webp 1920w",
+    "width": 640,
+    "height": 853
+  },
+  "/images/footprints/bali_ayana.webp": {
+    "src": "/images/previews/footprints/bali_ayana-480.webp",
+    "srcSet": "/images/previews/footprints/bali_ayana-480.webp 480w, /images/previews/footprints/bali_ayana-864.webp 864w",
+    "width": 480,
+    "height": 658
+  },
+  "/images/footprints/bali_canggu.webp": {
+    "src": "/images/previews/footprints/bali_canggu-480.webp",
+    "srcSet": "/images/previews/footprints/bali_canggu-480.webp 480w, /images/previews/footprints/bali_canggu-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/bali_ubud.webp": {
+    "src": "/images/previews/footprints/bali_ubud-480.webp",
+    "srcSet": "/images/previews/footprints/bali_ubud-480.webp 480w, /images/previews/footprints/bali_ubud-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/bali_uluwatu.webp": {
+    "src": "/images/previews/footprints/bali_uluwatu-480.webp",
+    "srcSet": "/images/previews/footprints/bali_uluwatu-480.webp 480w, /images/previews/footprints/bali_uluwatu-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/fujian_wuyishan.webp": {
+    "src": "/images/previews/footprints/fujian_wuyishan-480.webp",
+    "srcSet": "/images/previews/footprints/fujian_wuyishan-480.webp 480w, /images/previews/footprints/fujian_wuyishan-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/maldives_faarufushi.webp": {
+    "src": "/images/previews/footprints/maldives_faarufushi-480.webp",
+    "srcSet": "/images/previews/footprints/maldives_faarufushi-480.webp 480w, /images/previews/footprints/maldives_faarufushi-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/paris_disneyland.webp": {
+    "src": "/images/previews/footprints/paris_disneyland-480.webp",
+    "srcSet": "/images/previews/footprints/paris_disneyland-480.webp 480w, /images/previews/footprints/paris_disneyland-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/paris_eiffel_tower.webp": {
+    "src": "/images/previews/footprints/paris_eiffel_tower-480.webp",
+    "srcSet": "/images/previews/footprints/paris_eiffel_tower-480.webp 480w, /images/previews/footprints/paris_eiffel_tower-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/pekin_taekwongdo.webp": {
+    "src": "/images/previews/footprints/pekin_taekwongdo-480.webp",
+    "srcSet": "/images/previews/footprints/pekin_taekwongdo-480.webp 480w, /images/previews/footprints/pekin_taekwongdo-960.webp 960w",
+    "width": 480,
+    "height": 720
+  },
+  "/images/footprints/pekin_tennis.webp": {
+    "src": "/images/previews/footprints/pekin_tennis-480.webp",
+    "srcSet": "/images/previews/footprints/pekin_tennis-480.webp 480w, /images/previews/footprints/pekin_tennis-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/switzerland_interlaken.webp": {
+    "src": "/images/previews/footprints/switzerland_interlaken-480.webp",
+    "srcSet": "/images/previews/footprints/switzerland_interlaken-480.webp 480w, /images/previews/footprints/switzerland_interlaken-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/switzerland_jungfrau.webp": {
+    "src": "/images/previews/footprints/switzerland_jungfrau-480.webp",
+    "srcSet": "/images/previews/footprints/switzerland_jungfrau-480.webp 480w, /images/previews/footprints/switzerland_jungfrau-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/footprints/vietnam_Nha_Trang.webp": {
+    "src": "/images/previews/footprints/vietnam_Nha_Trang-480.webp",
+    "srcSet": "/images/previews/footprints/vietnam_Nha_Trang-480.webp 480w, /images/previews/footprints/vietnam_Nha_Trang-960.webp 960w",
+    "width": 480,
+    "height": 640
+  },
+  "/images/projects/chat-o-matic.jpg": {
+    "src": "/images/previews/projects/chat-o-matic-480.webp",
+    "srcSet": "/images/previews/projects/chat-o-matic-480.webp 480w, /images/previews/projects/chat-o-matic-960.webp 960w",
+    "width": 480,
+    "height": 270
+  },
+  "/images/projects/dolphin-mascot.png": {
+    "src": "/images/previews/projects/dolphin-mascot-480.webp",
+    "srcSet": "/images/previews/projects/dolphin-mascot-480.webp 480w, /images/previews/projects/dolphin-mascot-960.webp 960w",
+    "width": 480,
+    "height": 480
+  },
+  "/images/projects/voce-authenticated.png": {
+    "src": "/images/previews/projects/voce-authenticated-480.webp",
+    "srcSet": "/images/previews/projects/voce-authenticated-480.webp 480w, /images/previews/projects/voce-authenticated-960.webp 960w",
+    "width": 480,
+    "height": 333
+  },
+  "/images/projects/conjugo.jpg": {
+    "src": "/images/previews/projects/conjugo-480.webp",
+    "srcSet": "/images/previews/projects/conjugo-480.webp 480w, /images/previews/projects/conjugo-960.webp 960w",
+    "width": 480,
+    "height": 333
+  }
+}

@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import { footprints } from "../data/footprints";
+import imagePreviews from "../data/image-previews.json";
 import { useLanguage } from "../hooks/useLanguage";
 
 export default function Footprints() {
@@ -41,6 +42,8 @@ export default function Footprints() {
       gallery: galleryRef.current,
       children: "a.photo-frame",
       pswpModule: () => import("photoswipe"),
+      // Only warm nearby full-size photos after the visitor opens the gallery.
+      preload: [0, 1],
       mainClass: "footprints-lightbox",
       bgOpacity: 0.96,
       paddingFn: (viewport) => ({
@@ -166,11 +169,14 @@ export default function Footprints() {
                   }
                 >
                   <img
-                    src={photo.imageUrl}
+                    src={imagePreviews[photo.imageUrl].src}
+                    srcSet={imagePreviews[photo.imageUrl].srcSet}
+                    sizes="(max-width: 700px) calc((100vw - 40px) * 0.82), (max-width: 1000px) calc((100vw - 64px) * 0.45), (max-width: 1552px) calc((100vw - 112px) * 0.34), 490px"
                     alt={`${photo.title[language]} — ${photo.description[language]}`}
                     width={photo.width}
                     height={photo.height}
                     loading="lazy"
+                    decoding="async"
                     draggable={false}
                   />
                   <span className="photo-expand" aria-hidden="true">

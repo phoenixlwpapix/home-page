@@ -1,8 +1,10 @@
 // src/data/footprints.ts
+import type imagePreviews from "./image-previews.json";
+
 export interface Footprint {
   title: { zh: string; en: string };
   description: { zh: string; en: string };
-  imageUrl: string;
+  imageUrl: Exclude<keyof typeof imagePreviews, "hero">;
   width: number;
   height: number;
   location: { zh: string; en: string };

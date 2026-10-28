@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
 import { useLanguage } from "../hooks/useLanguage";
 import { useTheme } from "../hooks/useTheme";
@@ -6,6 +6,7 @@ import { useTheme } from "../hooks/useTheme";
 export default function Header() {
   const { language, toggleLanguage } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
+  const headerRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState("about");
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -44,8 +45,20 @@ export default function Header() {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMenuOpen(false);
     };
+    const onPointerDown = (event: PointerEvent) => {
+      if (
+        headerRef.current &&
+        !headerRef.current.contains(event.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    window.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("pointerdown", onPointerDown);
+    };
   }, [menuOpen]);
 
   const zh = language === "zh";
@@ -59,7 +72,7 @@ export default function Header() {
     .join(" ");
 
   return (
-    <header className={headerClass}>
+    <header ref={headerRef} className={headerClass}>
       <div className="page-shell header-inner">
         <a
           className="wordmark"

@@ -27,11 +27,11 @@ export default function Hero() {
           fetchPriority="high"
         />
         <div className="landscape-shade" />
-        <div className="landscape-top"><span><Compass size={17} /> THE WORLD IS MY PLAYGROUND</span><span>46°32′ N / 7°57′ E</span></div>
-        <div className="landscape-bottom"><div><span className="eyebrow">A MOMENT FROM MY JOURNAL</span><p>{zh ? "下一站，未知。" : "Next stop: somewhere new."}</p><span>{zh ? "瑞士 · 少女峰" : "JUNGFRAU · SWITZERLAND"}</span></div><a className="round-link" href="#footprints" aria-label={zh ? "探索旅行相册" : "Explore travel photographs"}><ArrowDown size={26} /></a></div>
+        <div className="landscape-top"><span><Compass size={17} /> {zh ? "把世界变成游乐场" : "THE WORLD IS MY PLAYGROUND"}</span><span>46°32′ N / 7°57′ E</span></div>
+        <div className="landscape-bottom"><div><span className="eyebrow">{zh ? "旅途手记 · 镜头一瞥" : "A MOMENT FROM MY JOURNAL"}</span><p>{zh ? "下一站，未知。" : "Next stop: somewhere new."}</p><span>{zh ? "瑞士 · 少女峰" : "JUNGFRAU · SWITZERLAND"}</span></div><a className="round-link" href="#footprints" aria-label={zh ? "探索旅行相册" : "Explore travel photographs"}><ArrowDown size={26} /></a></div>
         <span className="photo-stamp" aria-hidden="true">GET OUT<br />& GET LOST<span>YYH / FIELD NOTES</span></span>
       </div>
-      <div className="personal-strip"><span>YOUTHFUL. YUMMY. HAPPY.</span><div><span><Code2 size={16} />{zh ? "创造" : "MAKE"}</span><span><Waves size={16} />{zh ? "运动" : "PLAY"}</span><span><Compass size={16} />{zh ? "探索" : "EXPLORE"}</span></div><a href="#works" aria-label={zh ? "向下探索" : "Scroll to explore"}>SCROLL TO EXPLORE <ArrowDown size={14} /></a></div>
+      <div className="personal-strip"><span>YOUTHFUL. YUMMY. HAPPY.</span><div><span><Code2 size={16} />{zh ? "创造" : "MAKE"}</span><span><Waves size={16} />{zh ? "运动" : "PLAY"}</span><span><Compass size={16} />{zh ? "探索" : "EXPLORE"}</span></div><a href="#works" aria-label={zh ? "向下探索" : "Scroll to explore"}>{zh ? "向下探索" : "SCROLL TO EXPLORE"} <ArrowDown size={14} /></a></div>
     </section>
   );
 }

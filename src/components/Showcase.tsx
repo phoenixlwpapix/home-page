@@ -1,5 +1,12 @@
-import { useState } from "react";
-import { ArrowDown, ArrowUpRight, Github } from "lucide-react";
+import {
+  ArrowUpRight,
+  BookOpenCheck,
+  CakeSlice,
+  FileUser,
+  Github,
+  Sparkles,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { projects } from "../data/projects";
 import { useLanguage } from "../hooks/useLanguage";
 import imagePreviews from "../data/image-previews.json";
@@ -45,17 +52,65 @@ const selected = [
       "Make conjugation second nature.",
     ],
   },
-
 ];
+
+interface PlaceholderMeta {
+  themeClass: string;
+  category: [string, string];
+  posterLines: [[string, string], [string, string]];
+  tags: string;
+  Icon: LucideIcon;
+}
+
+const moreMeta: Record<string, PlaceholderMeta> = {
+  Vocably: {
+    themeClass: "project-vocab",
+    category: ["英语学习 / 拼写填空", "ENGLISH / SPELLING & CONTEXT"],
+    posterLines: [
+      ["拼一拼，填一填，", "把单词真正用起来。"],
+      ["Spell it out.", "Use it in context."],
+    ],
+    tags: "SPELL · FILL · MASTER",
+    Icon: BookOpenCheck,
+  },
+  Fantasia: {
+    themeClass: "project-fantasia",
+    category: ["灵感创作 / AI 写作", "CREATIVE / AI WRITING"],
+    posterLines: [
+      ["给脑海里的故事，", "插上想象的翅膀。"],
+      ["Turn little sparks", "into stories."],
+    ],
+    tags: "IMAGINE · DRAFT · POLISH",
+    Icon: Sparkles,
+  },
+  JianMian: {
+    themeClass: "project-jianmian",
+    category: ["模拟练习 / AI 助手", "PRACTICE / AI ASSISTANT"],
+    posterLines: [
+      ["从容表达自己，", "每一次对答都更自信。"],
+      ["Clearer words,", "calmer conversations."],
+    ],
+    tags: "PREPARE · PRACTICE · SHINE",
+    Icon: FileUser,
+  },
+  "Chez Liliane": {
+    themeClass: "project-bakery",
+    category: ["生活美学 / 烘焙手记", "LIFESTYLE / BAKING RECIPES"],
+    posterLines: [
+      ["烤箱叮的一声，", "空气里都是甜味。"],
+      ["Warm ovens,", "sweet little moments."],
+    ],
+    tags: "FLOUR · BUTTER · JOY",
+    Icon: CakeSlice,
+  },
+};
 
 export default function Showcase() {
   const { language } = useLanguage();
-  const [expanded, setExpanded] = useState(false);
   const zh = language === "zh";
   const remaining = projects.filter(
     (project) => !selected.some((item) => item.name === project.title.en),
   );
-  const visible = expanded ? remaining : remaining.slice(0, 3);
   return (
     <section id="works" className="work-section page-shell">
       <div className="section-heading reveal">
@@ -78,6 +133,9 @@ export default function Showcase() {
           )}
         </p>
       </div>
+      <p className="mobile-swipe-hint eyebrow" aria-hidden="true">
+        {zh ? "左右滑动浏览精选作品 →" : "SWIPE TO EXPLORE SELECTED WORKS →"}
+      </p>
       <div className="featured-grid" tabIndex={0} role="region" aria-label={zh ? "精选作品，可横向滚动" : "Selected projects, scroll horizontally"}>
         {selected.map((item, index) => {
           const project = projects.find(
@@ -178,57 +236,94 @@ export default function Showcase() {
             <span> / {String(remaining.length).padStart(2, "0")}</span>
           </h3>
           <span className="eyebrow">
-            {zh ? "还有这些 ↓" : "AND THERE'S MORE ↓"}
+            {zh ? "实验与日常小工具" : "EXPERIMENTS & LITTLE TOOLS"}
           </span>
         </div>
-        <div id="project-directory">
-          {visible.map((project, index) => (
-            <div className="project-row" key={project.title.en}>
-              <span className="row-number">
-                {String(index + selected.length + 1).padStart(2, "0")}
-              </span>
-              <a
-                className="row-main"
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+        <div
+          className="featured-grid more-grid"
+          tabIndex={0}
+          role="region"
+          aria-label={zh ? "更多作品" : "More projects"}
+        >
+          {remaining.map((project, index) => {
+            const meta = moreMeta[project.title.en] ?? {
+              themeClass: "project-vocab",
+              category: ["创意作品", "CREATIVE PROJECT"],
+              posterLines: [
+                [project.title.zh, "探索更多可能。"],
+                [project.title.en, "Explore new ideas."],
+              ],
+              tags: "CREATE · PLAY · EXPLORE",
+              Icon: Sparkles,
+            };
+            const { Icon } = meta;
+            const lines = meta.posterLines[zh ? 0 : 1];
+            const num = String(index + selected.length + 1).padStart(2, "0");
+            return (
+              <article
+                key={project.title.en}
+                className={`reveal featured-project ${meta.themeClass}`}
               >
-                <h4>{project.title[language]}</h4>
-                <p>{project.description[language]}</p>
-                <ArrowUpRight size={20} />
-              </a>
-              {project.githubUrl && (
                 <a
-                  className="row-github icon-button"
-                  href={project.githubUrl}
+                  className="project-visual"
+                  href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${project.title[language]} GitHub`}
+                  aria-label={`${zh ? "打开" : "Open"} ${project.title[language]}`}
                 >
-                  <Github size={16} />
+                  <div className="project-art-label">
+                    <span>{project.title[language]}</span>
+                    <span>{num} / YYH</span>
+                  </div>
+                  <div className="placeholder-art">
+                    <p>
+                      {lines[0]}
+                      <br />
+                      {lines[1]}
+                    </p>
+                    <span className="placeholder-tags" aria-hidden="true">
+                      {meta.tags}
+                    </span>
+                    <div className="placeholder-badge" aria-hidden="true">
+                      <Icon size={64} strokeWidth={1.35} />
+                      <span>{new URL(project.demoUrl).hostname}</span>
+                    </div>
+                  </div>
+                  <span className="project-open">
+                    <ArrowUpRight size={23} />
+                  </span>
                 </a>
-              )}
-            </div>
-          ))}
+                <div className="project-info">
+                  <div>
+                    <p className="eyebrow">{meta.category[zh ? 0 : 1]}</p>
+                    <h3>
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.title[language]}
+                        <ArrowUpRight size={20} />
+                      </a>
+                    </h3>
+                    <p>{project.description[language]}</p>
+                  </div>
+                  {project.githubUrl && (
+                    <a
+                      className="icon-button"
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.title[language]} GitHub`}
+                    >
+                      <Github size={19} />
+                    </a>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
-        <button
-          className="directory-toggle text-link"
-          aria-expanded={expanded}
-          aria-controls="project-directory"
-          onClick={() => setExpanded(!expanded)}
-        >
-          {expanded
-            ? zh
-              ? "收起目录"
-              : "Show less"
-            : zh
-              ? `展开全部 ${projects.length} 个作品`
-              : `Explore all ${projects.length} projects`}
-          <ArrowDown
-            size={16}
-            className={expanded ? "rotate-arrow" : undefined}
-          />
-        </button>
       </div>
     </section>
   );

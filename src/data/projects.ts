@@ -64,28 +64,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/phoenixlwpapix/vocably",
   },
   {
-    title: { zh: "灵犀", en: "LingXi" },
-    description: {
-      zh: "一个智能员工关系助手",
-      en: "An intelligent employee relationship assistant",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/F77F00/FFFFFF?text=LingXi&font=roboto",
-    demoUrl: "https://lingxi.studioyyh.com/",
-    githubUrl: "",
-  },
-  {
-    title: { zh: "聘才透镜", en: "Hire Lens" },
-    description: {
-      zh: "AI智能招聘辅助工具。",
-      en: "Hiring tool to help you find your dream job.",
-    },
-    imageUrl:
-      "https://placehold.co/600x400/7209B7/FFFFFF?text=Hire%20Lens&font=roboto",
-    demoUrl: "https://hire.studioyyh.com/",
-    githubUrl: "",
-  },
-  {
     title: { zh: "Fantasia", en: "Fantasia" },
     description: {
       zh: "AI驱动的智能写作助手",

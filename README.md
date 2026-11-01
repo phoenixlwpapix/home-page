@@ -114,7 +114,7 @@ pnpm preview
 
 ### 素材维护
 
-精选素材位于 `public/images/projects/`。Voce 使用登录后的 Vocabulary timeline 截图，可见最新单词 `traveling`；ConjuGO 为练习界面。海豚英语线上连接及本地后端加载未成功，因此采用现有吉祥物。后续可替换为新的产品截图，并同步 `src/components/Showcase.tsx`。
+精选素材位于 `public/images/projects/`。Voce 使用登录后的 Vocabulary timeline 截图，可见最新单词 `traveling`；ConjuGO 已于 2026-11-01 更新为新版浅色练习界面的真实截图，包含语言侧栏、变位选择题与进度统计，并同步更新 480 / 960 像素 WebP 缩略图及尺寸元数据。海豚英语线上连接及本地后端加载未成功，因此采用现有吉祥物。后续可替换为新的产品截图，并同步 `src/components/Showcase.tsx`。
 
 ### 验证命令
 

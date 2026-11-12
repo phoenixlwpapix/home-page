@@ -285,3 +285,171 @@ html[lang^="zh"] .hero h1,html[lang^="zh"] .section-heading h2,html[lang^="zh"] 
 @media(max-width:700px) {
   .project-chat .project-browser { width:92%; left:4%; top:30%; }
 }
+
+/* 404 Kinetic Horology Page */
+.nf-page-container {
+  min-height:100dvh;
+  padding-top:114px;
+  padding-bottom:72px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.nf-shell {
+  animation:enter .75s var(--ease) both;
+}
+.nf-kicker {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.14em;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:28px;
+}
+html[lang^="zh"] .nf-kicker > span:first-child {
+  letter-spacing:.04em;
+  font-size:12.5px;
+}
+.nf-kicker > span:first-child {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.nf-telemetry {
+  color:var(--muted);
+  font-variant-numeric:tabular-nums;
+}
+.nf-svg-canvas {
+  width:100%;
+  height:auto;
+  display:block;
+  cursor:pointer;
+  user-select:none;
+}
+.nf-horology-grid {
+  display:grid;
+  grid-template-columns:minmax(310px, 0.92fr) minmax(380px, 1.25fr);
+  gap:44px;
+  align-items:center;
+}
+.nf-horology-info .eyebrow {
+  margin-bottom:12px;
+}
+.nf-horology-info h1 {
+  font-size:clamp(34px,4.2vw,60px);
+  font-weight:600;
+  line-height:1.16;
+  letter-spacing:-.055em;
+  margin-bottom:18px;
+}
+html[lang^="zh"] .nf-horology-info h1 {
+  letter-spacing:-.025em;
+  line-height:1.24;
+}
+.nf-horology-info h1 > span {
+  color:var(--accent);
+}
+.nf-description {
+  font-size:14.5px;
+  line-height:1.85;
+  color:var(--muted);
+  margin-bottom:22px;
+}
+.nf-spec-list {
+  margin:0 0 26px;
+  border-top:1px solid var(--border);
+  font-variant-numeric:tabular-nums;
+}
+.nf-spec-list > div {
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  font-size:12px;
+  letter-spacing:.08em;
+}
+.nf-spec-list dt {
+  color:var(--muted);
+  font-weight:600;
+}
+.nf-spec-list dd {
+  margin:0;
+  font-weight:700;
+}
+.nf-actions {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+}
+.nf-btn-primary,
+.nf-btn-secondary,
+.nf-btn-ghost {
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  min-height:44px;
+  padding:0 18px;
+  border-radius:3px;
+  font-size:13.5px;
+  font-weight:600;
+  transition:transform .25s var(--ease),background .25s,border-color .25s,color .25s;
+}
+.nf-btn-primary {
+  background:var(--foreground);
+  color:var(--background);
+}
+.nf-btn-primary:hover {
+  background:var(--accent);
+  color:#fff;
+  transform:translateY(-2px);
+}
+.dark .nf-btn-primary:hover {
+  color:#101b25;
+}
+.nf-btn-secondary {
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--foreground);
+}
+.nf-btn-secondary:hover {
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:translateY(-2px);
+}
+.nf-btn-ghost {
+  padding-inline:10px;
+  color:var(--muted);
+}
+.nf-btn-ghost:hover {
+  color:var(--accent);
+}
+
+@media(max-width:1000px) {
+  .nf-horology-grid {
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .nf-horology-stage {
+    order:-1;
+  }
+}
+
+@media(max-width:700px) {
+  .nf-page-container {
+    padding-top:82px;
+    padding-bottom:48px;
+  }
+  .nf-kicker {
+    font-size:11px;
+    margin-bottom:16px;
+    padding-bottom:12px;
+  }
+  .nf-telemetry {
+    display:none;
+  }
+}

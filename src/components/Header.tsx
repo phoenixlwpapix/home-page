@@ -3,7 +3,12 @@ import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
 import { useLanguage } from "../hooks/useLanguage";
 import { useTheme } from "../hooks/useTheme";
 
-export default function Header() {
+interface HeaderProps {
+  isNotFound?: boolean;
+  onNavigateHome?: (hash?: string) => void;
+}
+
+export default function Header({ isNotFound = false, onNavigateHome }: HeaderProps) {
   const { language, toggleLanguage } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
   const headerRef = useRef<HTMLElement>(null);
@@ -71,14 +76,25 @@ export default function Header() {
     .filter(Boolean)
     .join(" ");
 
+  const handleSectionClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    hash: string
+  ) => {
+    setMenuOpen(false);
+    if (isNotFound && onNavigateHome) {
+      event.preventDefault();
+      onNavigateHome(hash);
+    }
+  };
+
   return (
     <header ref={headerRef} className={headerClass}>
       <div className="page-shell header-inner">
         <a
           className="wordmark"
-          href="#about"
+          href={isNotFound ? "/#about" : "#about"}
           aria-label="STUDIO YYH home"
-          onClick={() => setMenuOpen(false)}
+          onClick={(e) => handleSectionClick(e, "#about")}
         >
           <img src="/favicon.svg" alt="" width="42" height="42" />
           STUDIO YYH
@@ -89,20 +105,23 @@ export default function Header() {
           onClick={() => setMenuOpen(false)}
         >
           <a
-            href="#about"
-            aria-current={active === "about" ? "location" : undefined}
+            href={isNotFound ? "/#about" : "#about"}
+            aria-current={!isNotFound && active === "about" ? "location" : undefined}
+            onClick={(e) => handleSectionClick(e, "#about")}
           >
             {zh ? "首页" : "Home"}
           </a>
           <a
-            href="#works"
-            aria-current={active === "works" ? "location" : undefined}
+            href={isNotFound ? "/#works" : "#works"}
+            aria-current={!isNotFound && active === "works" ? "location" : undefined}
+            onClick={(e) => handleSectionClick(e, "#works")}
           >
             {zh ? "小作品" : "My stuff"}
           </a>
           <a
-            href="#footprints"
-            aria-current={active === "footprints" ? "location" : undefined}
+            href={isNotFound ? "/#footprints" : "#footprints"}
+            aria-current={!isNotFound && active === "footprints" ? "location" : undefined}
+            onClick={(e) => handleSectionClick(e, "#footprints")}
           >
             {zh ? "我的足迹" : "Adventures"}
           </a>
